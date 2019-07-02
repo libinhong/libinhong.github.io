@@ -39,7 +39,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: #34a682"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -54,8 +54,6 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/tags/随笔/">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -94,7 +92,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: #34a682"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -108,8 +106,6 @@
 			</hgroup>
 			
 			
-			
-				
 			
 				
 			
@@ -133,9 +129,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -173,36 +167,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Java中的常量"><a href="#Java中的常量" class="headerlink" title="Java中的常量"></a>Java中的常量</h1><p>是指在Java程序中固定不变的数据。我们可以理解为是一种特殊的变量，它的值被设定后，在程序运行过程中不允许改变。</p>
-<h2 id="常量的分类"><a href="#常量的分类" class="headerlink" title="常量的分类"></a>常量的分类</h2><p><strong>整数常量:</strong>  所有的整数   例如 100 -100 123 456等等</p>
-<p><strong>小数常量:</strong>  所有的小数   例如 1.2 3.14等等</p>
-<p><strong>字符常量:</strong>  用单引号引起来的单个字符,单引号中必须是单个字符,并且不能没有字符  例如 ‘a’ ‘1’ ‘0’ 等等</p>
-<p><strong>布尔常量:</strong>  只有2个值,一个是true(真\成立),一个是false(假\不成立)</p>
-<p><strong>字符串常量:</strong> 用双引号引起来的内容(多个字符),双引号中可以没有字符, 例如 “” “a”  “abc”  “10” 等等</p>
-<p><strong>空常量:</strong> null (引用数据类型)</p>
-<h1 id="Java中的变量"><a href="#Java中的变量" class="headerlink" title="Java中的变量"></a>Java中的变量</h1><p><strong>变量：</strong>可以变化的量</p>
-<p><strong>定义变量格式：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型 变量名 = 数据值;</span><br></pre></td></tr></table></figure>
-
-<p><strong>变量的作用：</strong>用来存储数据，而且变量中存储的数据是可以变化的</p>
-<p>变量可以看做是一个容器</p>
-<p>变量未初始化不能被使用</p>
-<p><strong>变量的使用:</strong></p>
-<p>1、Java 中的变量需要先声明后使用</p>
-<p>2、变量使用时，可以声明变量的同时进行初始化</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String love = <span class="string">"nihao"</span>;</span><br></pre></td></tr></table></figure>
-
-<p>也可以先声明后赋值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String love;</span><br><span class="line">love = <span class="string">"nihao"</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意事项：</strong></p>
-<p>1、long类型的数据记得加入L\l</p>
-<p>2、float的数据记得加入f\F</p>
-<p>3、字符串类型使用String</p>
-<p>4、 变量中每次只能赋一个值，但可以修改多次</p>
-<p>5、 main 方法中定义的变量必须先赋值，然后才能输出</p>
-<p>6、 <strong>变量名称：</strong>在同一个大括号范围内，变量的名字不可以相同。</p>
-<p>7、 <strong>变量赋值：</strong>定义的变量，不赋值不能使用。</p>
-
+        
+          <a class="article-more-a" href="/2019/07/02/Java中的变量与常量/#more">more >></a>
+        
       
 
       
@@ -276,18 +243,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>程序员自己定义的名称，例如类名，方法名，变量等等</strong></p>
-<p><strong>标识符命名的规则</strong></p>
-<p>1、只能由字母（a-z，A-Z），数字（0-9），下划线（_）和美元符号（$）组成</p>
-<p>2、不能以数字开头</p>
-<p>3、不能与关键字重名</p>
-<p>4、严格区分大小写</p>
-<p><strong>类命名规范</strong></p>
-<p>首字母大写，后面每个单词首字母大写（大驼峰式）。</p>
-<p><strong>方法命名规范</strong></p>
-<p>首字母小写，后面每个单词首字母大写（小驼峰式）。printNum</p>
-<p><strong>变量名规范</strong></p>
-<p>首字母小写，后面每个单词首字母大写（小驼峰式）。</p>
-
+        
+          <a class="article-more-a" href="/2019/07/02/Java中的标识符/#more">more >></a>
+        
       
 
       
@@ -347,7 +305,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/01/hello-world/">Welcome to Hexo</a>
+      <a class="article-title" href="/2019/07/01/hello-world/">Hexo命令使用</a>
     </h1>
   
 
@@ -360,20 +318,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <h2 id="hexo简单教程"><a href="#hexo简单教程" class="headerlink" title="hexo简单教程"></a>hexo简单教程</h2>
+        
+          <a class="article-more-a" href="/2019/07/01/hello-world/#more">more >></a>
+        
       
 
       
@@ -457,7 +405,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
