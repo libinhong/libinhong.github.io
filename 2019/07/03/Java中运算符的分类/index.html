@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java中的变量与常量 | 欢迎来到李滨洪的个人博客</title>
+  <title>Java中运算符的分类 | 欢迎来到李滨洪的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java中的常量是指在Java程序中固定不变的数据。我们可以理解为是一种特殊的变量，它的值被设定后，在程序运行过程中不允许改变。">
+  <meta name="description" content="算术运算符、赋值运算符、比较运算符、逻辑运算符、三元运算符">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中的变量与常量">
-<meta property="og:url" content="http://yoursite.com/2019/07/02/Java中的变量与常量/index.html">
+<meta property="og:title" content="Java中运算符的分类">
+<meta property="og:url" content="http://yoursite.com/2019/07/03/Java中运算符的分类/index.html">
 <meta property="og:site_name" content="欢迎来到李滨洪的个人博客">
-<meta property="og:description" content="Java中的常量是指在Java程序中固定不变的数据。我们可以理解为是一种特殊的变量，它的值被设定后，在程序运行过程中不允许改变。">
+<meta property="og:description" content="算术运算符、赋值运算符、比较运算符、逻辑运算符、三元运算符">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-03T16:42:34.820Z">
+<meta property="og:updated_time" content="2019-07-03T16:34:01.663Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中的变量与常量">
-<meta name="twitter:description" content="Java中的常量是指在Java程序中固定不变的数据。我们可以理解为是一种特殊的变量，它的值被设定后，在程序运行过程中不允许改变。">
+<meta name="twitter:title" content="Java中运算符的分类">
+<meta name="twitter:description" content="算术运算符、赋值运算符、比较运算符、逻辑运算符、三元运算符">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到李滨洪的个人博客" type="application/atom+xml">
   
@@ -149,57 +149,156 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java中的变量与常量" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java中运算符的分类" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java中的变量与常量
+      Java中运算符的分类
     </h1>
   
 
         
-        <a href="/2019/07/02/Java中的变量与常量/" class="archive-article-date">
-  	<time datetime="2019-07-02T14:08:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
+        <a href="/2019/07/03/Java中运算符的分类/" class="archive-article-date">
+  	<time datetime="2019-07-03T15:42:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Java中的常量"><a href="#Java中的常量" class="headerlink" title="Java中的常量"></a>Java中的常量</h3><p>是指在Java程序中固定不变的数据。我们可以理解为是一种特殊的变量，它的值被设定后，在程序运行过程中不允许改变。</p>
-<a id="more"></a> 
+        <p><font color="#7CCD7C"><strong>算术运算符、赋值运算符、比较运算符、逻辑运算符、三元运算符</strong></font></p>
+<a id="more"></a>
 
-<h4 id="常量的分类"><a href="#常量的分类" class="headerlink" title="常量的分类"></a>常量的分类</h4><p><strong>整数常量:</strong>  所有的整数   例如 100 -100 123 456等等</p>
-<p><strong>小数常量:</strong>  所有的小数   例如 1.2 3.14等等</p>
-<p><strong>字符常量:</strong>  用单引号引起来的单个字符,单引号中必须是单个字符,并且不能没有字符  例如 ‘a’ ‘1’ ‘0’ 等等</p>
-<p><strong>布尔常量:</strong>  只有2个值,一个是true(真\成立),一个是false(假\不成立)</p>
-<p><strong>字符串常量:</strong> 用双引号引起来的内容(多个字符),双引号中可以没有字符, 例如 “” “a”  “abc”  “10” 等等</p>
-<p><strong>空常量:</strong> null (引用数据类型)</p>
-<h4 id="常量优化机制"><a href="#常量优化机制" class="headerlink" title="常量优化机制"></a>常量优化机制</h4><p><font size="2"><strong>给一个变量赋值，如果等于号的右边是常量的表达式并且没有一个变量，那么就会在编译阶段计算该表达式的结果，然后判断该表达式的结果是否在左边类型所表示范围内，如果在，那么就赋值成功，如果不在，那么就赋值失败。</strong></font></p>
-<p><font color="red"><strong>注意：</strong>如果等于号·右边的表达式有变量，那么就不会有编译期间的常量优化机制</font></p>
-<h3 id="Java中的变量"><a href="#Java中的变量" class="headerlink" title="Java中的变量"></a>Java中的变量</h3><p><strong>变量：</strong>可以变化的量</p>
-<h4 id="定义变量格式："><a href="#定义变量格式：" class="headerlink" title="定义变量格式："></a><strong>定义变量格式：</strong></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型 变量名 = 数据值;</span><br></pre></td></tr></table></figure>
+<h3 id="O-算术运算符"><a href="#O-算术运算符" class="headerlink" title="Ø 算术运算符"></a>Ø 算术运算符</h3><table>
+<thead>
+<tr>
+<th><strong>算术运算符</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>+</strong></td>
+<td>加法</td>
+</tr>
+<tr>
+<td><strong>-</strong></td>
+<td>减法</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法</td>
+</tr>
+<tr>
+<td><strong>/</strong></td>
+<td>除法</td>
+</tr>
+<tr>
+<td><strong>%</strong></td>
+<td>求余</td>
+</tr>
+<tr>
+<td><strong>++</strong></td>
+<td>自增</td>
+</tr>
+<tr>
+<td><strong>- -</strong></td>
+<td>自减</td>
+</tr>
+</tbody></table>
+<h3 id="O-赋值运算符"><a href="#O-赋值运算符" class="headerlink" title="Ø 赋值运算符"></a>Ø 赋值运算符</h3><p><font color="#7CCD7C"><strong>赋值运算符，就是将符号右边的值，赋给左边的变量。</strong></font></p>
+<table>
+<thead>
+<tr>
+<th><strong>赋值运算符</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><font size="5">=<font></font></font></td>
+<td>等于号</td>
+</tr>
+<tr>
+<td><font size="5">+=<font></font></font></td>
+<td>加等于</td>
+</tr>
+<tr>
+<td><font size="5">-=<font></font></font></td>
+<td>减等于</td>
+</tr>
+<tr>
+<td><font size="5">*=<font></font></font></td>
+<td>乘等于</td>
+</tr>
+<tr>
+<td><font size="5">/=<font></font></font></td>
+<td>除等于</td>
+</tr>
+<tr>
+<td><font size="5">%=<font></font></font></td>
+<td>取模等于</td>
+</tr>
+</tbody></table>
+<h3 id="O-比较运算符"><a href="#O-比较运算符" class="headerlink" title="Ø 比较运算符"></a>Ø 比较运算符</h3><p><font color="#7CCD7C"><strong>比较运算符，是两个数据之间进行比较的运算，运算结果都是布尔值<code>true</code>或者<code>false</code> 。</strong></font></p>
+<table>
+<thead>
+<tr>
+<th><strong>比较运算符</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>==</strong></td>
+<td>相等</td>
+</tr>
+<tr>
+<td><strong>&gt;</strong></td>
+<td>大于</td>
+</tr>
+<tr>
+<td><strong>&lt;</strong></td>
+<td>小于</td>
+</tr>
+<tr>
+<td><strong>&gt;=</strong></td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td><strong>&lt;=</strong></td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td><strong>!=</strong></td>
+<td>不等于</td>
+</tr>
+</tbody></table>
+<h3 id="O-逻辑运算符"><a href="#O-逻辑运算符" class="headerlink" title="Ø 逻辑运算符　"></a>Ø 逻辑运算符　</h3><p> <font color="#7CCD7C"><strong>逻辑运算符，是用来连接两个布尔类型结果的运算符，运算结果都是布尔值<code>true</code>或者<code>false</code></strong></font></p>
+<p><strong>&amp;&amp;</strong> <strong>逻辑与 并且</strong></p>
+<p>遇false则false，只有2边同时为true，才为true</p>
+<p><strong>||</strong>  <strong>逻辑或 或者</strong></p>
+<p>遇true则true，只有2边同时为false，才为false</p>
+<p><strong>！逻辑非  取反</strong> </p>
+<p><strong>true变false  false变true</strong></p>
+<p><strong>实例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>  </span>&#123;</span><br><span class="line">    System.out.println(<span class="keyword">true</span> &amp;&amp; <span class="keyword">true</span>);<span class="comment">//true</span></span><br><span class="line">    System.out.println(<span class="keyword">true</span> &amp;&amp; <span class="keyword">false</span>);<span class="comment">//false</span></span><br><span class="line">    System.out.println(<span class="keyword">false</span> &amp;&amp; <span class="keyword">true</span>);<span class="comment">//false，右边不计算</span></span><br><span class="line">  </span><br><span class="line">    System.out.println(<span class="keyword">false</span> || <span class="keyword">false</span>);<span class="comment">//falase</span></span><br><span class="line">    System.out.println(<span class="keyword">false</span> || <span class="keyword">true</span>);<span class="comment">//true</span></span><br><span class="line">    System.out.println(<span class="keyword">true</span> || <span class="keyword">false</span>);<span class="comment">//true，右边不计算</span></span><br><span class="line">  </span><br><span class="line">    System.out.println(!<span class="keyword">false</span>);<span class="comment">//true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>变量的作用：</strong>用来存储数据，而且变量中存储的数据是可以变化的</p>
-<p>变量可以看做是一个容器</p>
-<p>变量未初始化不能被使用</p>
-<h4 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用:"></a><strong>变量的使用:</strong></h4><p>1、Java 中的变量需要先声明后使用</p>
-<p>2、变量使用时，可以声明变量的同时进行初始化</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String love = <span class="string">"nihao"</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="逻辑运算符的注意事项"><a href="#逻辑运算符的注意事项" class="headerlink" title="逻辑运算符的注意事项"></a>逻辑运算符的<strong>注意</strong>事项</h3><p>1.逻辑运算符的2边一定要是boolean类型的值,或者是结果为boolean类型的表达式</p>
+<p>2.逻辑表达式的结果是boolean类型的数据</p>
+<p><font color="red"><strong>注意逻辑运算符的短路问题：</strong></font></p>
+<p>逻辑与: 如果左边为false,那么逻辑与运算符的右边就不会运算</p>
+<p>逻辑或: 如果左边为true,那么逻辑或运算符的右边就不会运算</p>
+<h3 id="O-三元运算符"><a href="#O-三元运算符" class="headerlink" title="Ø 三元运算符"></a>Ø 三元运算符</h3><p><strong>格式：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型 变量名  =  布尔类型表达式？ 结果<span class="number">1</span> : 结果<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
 
-<p>也可以先声明后赋值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String love;</span><br><span class="line">love = <span class="string">"nihao"</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>三元运算符计算方式：</strong></p>
+<p>- 布尔类型表达式结果是true，三元运算符整体结果为结果1，赋值给变量。</p>
+<p>- 布尔类型表达式结果是false，三元运算符整体结果为结果2，赋值给变量。</p>
+<p><strong>实例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = (<span class="number">1</span>==<span class="number">2</span> ? <span class="number">100</span> : <span class="number">200</span>);</span><br><span class="line">    System.out.println(i);<span class="comment">//200</span></span><br><span class="line">    <span class="keyword">int</span> j = (<span class="number">3</span>&lt;=<span class="number">4</span> ? <span class="number">500</span> : <span class="number">600</span>);</span><br><span class="line">    System.out.println(j);<span class="comment">//500</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><p>1、long类型的数据记得加入L\l</p>
-<p>2、float的数据记得加入f\F</p>
-<p>3、字符串类型使用String</p>
-<p>4、 变量中每次只能赋一个值，但可以修改多次</p>
-<p>5、 main 方法中定义的变量必须先赋值，然后才能输出</p>
-<p>6、 <strong>变量名称：</strong>在同一个大括号范围内，变量的名字不可以相同。</p>
-<p>7、 <strong>变量赋值：</strong>定义的变量，不赋值不能使用。</p>
+<h3 id="运算符的优先级"><a href="#运算符的优先级" class="headerlink" title="运算符的优先级"></a><strong>运算符的优先级</strong></h3><p>自增自减运算符 &gt; 算术运算符 &gt; 比较运算符 &gt; 逻辑运算符 &gt; 三元运算符 &gt; 赋值运算符</p>
 
       
 
@@ -258,18 +357,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/03/Java中的数据类型/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/04/Java中的自增与自减/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java中的数据类型
+          Java中的自增与自减
         
       </div>
     </a>
   
   
-    <a href="/2019/07/02/Java中的标识符/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java中的标识符</div>
+    <a href="/2019/07/03/Java中的数据类型转换/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中的数据类型转换</div>
       <i class="icon-circle-right"></i>
     </a>
   

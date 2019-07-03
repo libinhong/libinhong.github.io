@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java中的变量与常量 | 欢迎来到李滨洪的个人博客</title>
+  <title>Java中的自增与自减 | 欢迎来到李滨洪的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java中的常量是指在Java程序中固定不变的数据。我们可以理解为是一种特殊的变量，它的值被设定后，在程序运行过程中不允许改变。">
+  <meta name="description" content="++ 运算，变量自己增长1。反之，--运算，变量自己减少1，用法与++ 一致。">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中的变量与常量">
-<meta property="og:url" content="http://yoursite.com/2019/07/02/Java中的变量与常量/index.html">
+<meta property="og:title" content="Java中的自增与自减">
+<meta property="og:url" content="http://yoursite.com/2019/07/04/Java中的自增与自减/index.html">
 <meta property="og:site_name" content="欢迎来到李滨洪的个人博客">
-<meta property="og:description" content="Java中的常量是指在Java程序中固定不变的数据。我们可以理解为是一种特殊的变量，它的值被设定后，在程序运行过程中不允许改变。">
+<meta property="og:description" content="++ 运算，变量自己增长1。反之，--运算，变量自己减少1，用法与++ 一致。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-03T16:42:34.820Z">
+<meta property="og:updated_time" content="2019-07-03T16:37:51.856Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中的变量与常量">
-<meta name="twitter:description" content="Java中的常量是指在Java程序中固定不变的数据。我们可以理解为是一种特殊的变量，它的值被设定后，在程序运行过程中不允许改变。">
+<meta name="twitter:title" content="Java中的自增与自减">
+<meta name="twitter:description" content="++ 运算，变量自己增长1。反之，--运算，变量自己减少1，用法与++ 一致。">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到李滨洪的个人博客" type="application/atom+xml">
   
@@ -149,57 +149,45 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java中的变量与常量" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java中的自增与自减" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java中的变量与常量
+      Java中的自增与自减
     </h1>
   
 
         
-        <a href="/2019/07/02/Java中的变量与常量/" class="archive-article-date">
-  	<time datetime="2019-07-02T14:08:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
+        <a href="/2019/07/04/Java中的自增与自减/" class="archive-article-date">
+  	<time datetime="2019-07-03T16:33:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Java中的常量"><a href="#Java中的常量" class="headerlink" title="Java中的常量"></a>Java中的常量</h3><p>是指在Java程序中固定不变的数据。我们可以理解为是一种特殊的变量，它的值被设定后，在程序运行过程中不允许改变。</p>
-<a id="more"></a> 
+        <p><code>++</code> <strong>运算，变量自己增长1</strong>。<strong>反之，<code>--</code>运算，变量自己减少1，用法与++ 一致。</strong> </p>
+<a id="more"></a>
 
-<h4 id="常量的分类"><a href="#常量的分类" class="headerlink" title="常量的分类"></a>常量的分类</h4><p><strong>整数常量:</strong>  所有的整数   例如 100 -100 123 456等等</p>
-<p><strong>小数常量:</strong>  所有的小数   例如 1.2 3.14等等</p>
-<p><strong>字符常量:</strong>  用单引号引起来的单个字符,单引号中必须是单个字符,并且不能没有字符  例如 ‘a’ ‘1’ ‘0’ 等等</p>
-<p><strong>布尔常量:</strong>  只有2个值,一个是true(真\成立),一个是false(假\不成立)</p>
-<p><strong>字符串常量:</strong> 用双引号引起来的内容(多个字符),双引号中可以没有字符, 例如 “” “a”  “abc”  “10” 等等</p>
-<p><strong>空常量:</strong> null (引用数据类型)</p>
-<h4 id="常量优化机制"><a href="#常量优化机制" class="headerlink" title="常量优化机制"></a>常量优化机制</h4><p><font size="2"><strong>给一个变量赋值，如果等于号的右边是常量的表达式并且没有一个变量，那么就会在编译阶段计算该表达式的结果，然后判断该表达式的结果是否在左边类型所表示范围内，如果在，那么就赋值成功，如果不在，那么就赋值失败。</strong></font></p>
-<p><font color="red"><strong>注意：</strong>如果等于号·右边的表达式有变量，那么就不会有编译期间的常量优化机制</font></p>
-<h3 id="Java中的变量"><a href="#Java中的变量" class="headerlink" title="Java中的变量"></a>Java中的变量</h3><p><strong>变量：</strong>可以变化的量</p>
-<h4 id="定义变量格式："><a href="#定义变量格式：" class="headerlink" title="定义变量格式："></a><strong>定义变量格式：</strong></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型 变量名 = 数据值;</span><br></pre></td></tr></table></figure>
+<p><strong>独立运算：</strong></p>
+<p>变量在独立运算时，<code>前++</code>和<code>后++</code>没有区别 。</p>
+<p>变量<code>前++</code> ：例如 <code>++i</code> 。</p>
+<p>变量<code>后++</code> ：例如 <code>i++</code> 。</p>
+<p><strong>混合运算：</strong></p>
+<p>和其他变量放在一起，<code>前++</code>和<code>后++</code>就产生了不同。</p>
+<p><strong>左自增（ ++a） 和 右自增 （a++ ）的区别</strong></p>
+<p>++和–既可以出现操作数的左边，也可以出现在右边，但结果是不同的</p>
+<p><strong>左自增例子：</strong> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line">        <span class="keyword">int</span> b = ++a;<span class="comment">//让a先执行自增,然后再赋值给b</span></span><br><span class="line">        System.out.println(<span class="string">"a"</span> + a);<span class="comment">//输出结果6</span></span><br><span class="line">        System.out.println(<span class="string">"b"</span> + b);<span class="comment">//输出结果6</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>变量的作用：</strong>用来存储数据，而且变量中存储的数据是可以变化的</p>
-<p>变量可以看做是一个容器</p>
-<p>变量未初始化不能被使用</p>
-<h4 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用:"></a><strong>变量的使用:</strong></h4><p>1、Java 中的变量需要先声明后使用</p>
-<p>2、变量使用时，可以声明变量的同时进行初始化</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String love = <span class="string">"nihao"</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>右自增例子：</strong> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line">        <span class="keyword">int</span> b = a++;<span class="comment">//将a的值先赋值给变量b,然后再执行自增</span></span><br><span class="line">        System.out.println(<span class="string">"a"</span> + a);<span class="comment">//输出结果6</span></span><br><span class="line">        System.out.println(<span class="string">"b"</span> + b);<span class="comment">//输出结果5</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>也可以先声明后赋值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String love;</span><br><span class="line">love = <span class="string">"nihao"</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h4><p>1、long类型的数据记得加入L\l</p>
-<p>2、float的数据记得加入f\F</p>
-<p>3、字符串类型使用String</p>
-<p>4、 变量中每次只能赋一个值，但可以修改多次</p>
-<p>5、 main 方法中定义的变量必须先赋值，然后才能输出</p>
-<p>6、 <strong>变量名称：</strong>在同一个大括号范围内，变量的名字不可以相同。</p>
-<p>7、 <strong>变量赋值：</strong>定义的变量，不赋值不能使用。</p>
+<p><strong>注意：</strong></p>
+<p><font color="red">自增自减运算符只能用于操作变量，不能直接用于操作数值或者常量！</font></p>
 
       
 
@@ -258,18 +246,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/03/Java中的数据类型/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java中的数据类型
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/02/Java中的标识符/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java中的标识符</div>
+    <a href="/2019/07/03/Java中运算符的分类/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中运算符的分类</div>
       <i class="icon-circle-right"></i>
     </a>
   
