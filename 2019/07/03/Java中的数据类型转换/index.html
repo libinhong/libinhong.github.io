@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>欢迎来到李滨洪的个人博客</title>
+  <title>Java中的数据类型转换 | 欢迎来到李滨洪的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="欢迎来到李滨洪的个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Java程序中要求参与的计算的数据，必须要保证数据类型的一致性，如果数据类型不一致将发生类型的转换。 可以分为：自动转换、强制转换">
+<meta name="keywords" content="java基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中的数据类型转换">
+<meta property="og:url" content="http://yoursite.com/2019/07/03/Java中的数据类型转换/index.html">
 <meta property="og:site_name" content="欢迎来到李滨洪的个人博客">
+<meta property="og:description" content="Java程序中要求参与的计算的数据，必须要保证数据类型的一致性，如果数据类型不一致将发生类型的转换。 可以分为：自动转换、强制转换">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T09:48:23.082Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="欢迎来到李滨洪的个人博客">
+<meta name="twitter:title" content="Java中的数据类型转换">
+<meta name="twitter:description" content="Java程序中要求参与的计算的数据，必须要保证数据类型的一致性，如果数据类型不一致将发生类型的转换。 可以分为：自动转换、强制转换">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到李滨洪的个人博客" type="application/atom+xml">
   
@@ -144,16 +149,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Java中的数据类型转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Java中的数据类型转换" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/03/Java中的数据类型转换/">Java中的数据类型转换</a>
+    <h1 class="article-title" itemprop="name">
+      Java中的数据类型转换
     </h1>
   
 
@@ -168,11 +171,65 @@
       
         <p>Java程序中要求参与的计算的数据，必须要保证数据类型的一致性，如果数据类型不一致将发生类型的转换。</p>
 <p><strong>可以分为：自动转换、强制转换</strong></p>
-        
-          <a class="article-more-a" href="/2019/07/03/Java中的数据类型转换/#more">more >></a>
-        
+<a id="more"></a>
+
+<h4 id="Java中的自动转换"><a href="#Java中的自动转换" class="headerlink" title="Java中的自动转换"></a>Java中的自动转换</h4><p><strong>特点:</strong></p>
+<p>1、系统自动完成的，不需要程序员手动修改代码</p>
+<p>2、将取值范围小的类型 自动提升为 取值范围大的类型</p>
+<h5 id="具体实例"><a href="#具体实例" class="headerlink" title="具体实例"></a><strong>具体实例</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">byte</span> b = <span class="number">2</span>;</span><br><span class="line">  	<span class="keyword">byte</span> c = b + a; <span class="comment">// 报错</span></span><br><span class="line">    <span class="comment">//int类型和byte类型运算，结果是int类型</span></span><br><span class="line">    <span class="keyword">int</span> d = b + a;</span><br><span class="line">    System.out.println(d);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong></p>
+<p>整数类型直接写会默认为int </p>
+<p>小数类型直接写默认为double</p>
+<p><strong>类型的范围大小：</strong>byte &lt; short(char) &lt; int &lt; long &lt; float &lt; double</p>
+<h4 id="Java中的强制转换"><a href="#Java中的强制转换" class="headerlink" title="Java中的强制转换"></a>Java中的强制转换</h4><p><strong>特点：</strong></p>
+<p>1、需要程序员手动修改代码</p>
+<p>2、<strong>语法：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">范围小的类型 变量名 = （范围小的类型）范围大的类型的数据</span><br></pre></td></tr></table></figure>
+
+<p>3、从范围小 到 范围大（将<code>取值范围大的类型</code>强制转换成<code>取值范围小的类型</code>。）</p>
+<h5 id="具体实例-1"><a href="#具体实例-1" class="headerlink" title="具体实例"></a><strong>具体实例</strong></h5><p><strong>实例1</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1.5</span>; <span class="comment">// 错误</span></span><br></pre></td></tr></table></figure>
+
+<p><code>double</code> 类型内存8个字节，<code>int</code> 类型内存4个字节。<code>1.5</code> 是<code>double</code> 类型，取值范围大于<code>int</code> 。可以理解为<code>double</code> 是8升的水壶，<code>int</code> 是4升的水壶，不能把大水壶中的水直接放进小水壶去。</p>
+<p>想要赋值成功，只有通过强制类型转换，将<code>double</code> 类型强制转换成<code>int</code> 类型才能赋值。</p>
+<p><strong>实例2</strong></p>
+<p>int类型和double类型运算，结果是double类型，int类型会提升为double类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">double</span> d = <span class="number">2.5</span>;</span><br><span class="line">    <span class="keyword">double</span> e = d+i;</span><br><span class="line">    System.out.println(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong></p>
+<p>强制类型转换可能会造成数据的丢失哦，小伙伴们在应用时一定要慎重哦！</p>
+<p>Boolean类型不能发生强制类型转换</p>
+<p>byte \ short \ char 这三种数据类型发生数学运算时，会自动提升为int类型</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/geren/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -192,16 +249,24 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/03/Java中的数据类型转换/">展开全文 >></a>
-        </p>
-      
 
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/03/Java中的数据类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中的数据类型</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -221,315 +286,14 @@
 
 
 
-
   
-    <article id="post-Java中的数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/03/Java中的数据类型/">Java中的数据类型</a>
-    </h1>
   
 
-        
-        <a href="/2019/07/03/Java中的数据类型/" class="archive-article-date">
-  	<time datetime="2019-07-03T08:53:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Java的数据类型分为两大类"><a href="#Java的数据类型分为两大类" class="headerlink" title="Java的数据类型分为两大类"></a>Java的数据类型分为两大类</h4><ul>
-<li><strong>基本数据类型</strong>：包括 <code>整数</code>、<code>浮点数</code>、<code>字符</code>、<code>布尔</code>。 </li>
-<li><strong>引用数据类型</strong>：包括 <code>类</code>、<code>数组</code>、<code>接口</code>、<code>Lambda</code>。 字符串引用数据类型 </li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/07/03/Java中的数据类型/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/03/Java中的数据类型/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java中的变量与常量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/02/Java中的变量与常量/">Java中的变量与常量</a>
-    </h1>
   
 
-        
-        <a href="/2019/07/02/Java中的变量与常量/" class="archive-article-date">
-  	<time datetime="2019-07-02T14:08:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Java中的常量"><a href="#Java中的常量" class="headerlink" title="Java中的常量"></a>Java中的常量</h1><p>是指在Java程序中固定不变的数据。我们可以理解为是一种特殊的变量，它的值被设定后，在程序运行过程中不允许改变。</p>
-        
-          <a class="article-more-a" href="/2019/07/02/Java中的变量与常量/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/02/Java中的变量与常量/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java中的标识符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/02/Java中的标识符/">Java中的标识符</a>
-    </h1>
   
 
-        
-        <a href="/2019/07/02/Java中的标识符/" class="archive-article-date">
-  	<time datetime="2019-07-02T14:03:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>程序员自己定义的名称，例如类名，方法名，变量等等</strong></p>
-        
-          <a class="article-more-a" href="/2019/07/02/Java中的标识符/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/02/Java中的标识符/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/01/hello-world/">Hexo命令使用</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/01/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-01T10:45:01.155Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="hexo简单教程"><a href="#hexo简单教程" class="headerlink" title="hexo简单教程"></a>hexo简单教程</h2>
-        
-          <a class="article-more-a" href="/2019/07/01/hello-world/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">hexo使用教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/01/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -552,8 +316,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
