@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java中数组的定义与访问 | 欢迎来到李滨洪的个人博客</title>
+  <title>Java中ArrayList类的使用 | 欢迎来到李滨洪的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数组的定义方式可以分为动态方式和静态方式">
-<meta name="keywords" content="java基础">
+  <meta name="description" content="java.util.ArrayList 是大小可变的数组的实现，存储在内的数据称为元素。此类提供一些方法来操作内部存储 的 元素。 ArrayList 中可不断添加元素，其大小也自动增长。">
+<meta name="keywords" content="java中的常用类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中数组的定义与访问">
-<meta property="og:url" content="http://yoursite.com/2019/07/04/Java中数组的定义方式/index.html">
+<meta property="og:title" content="Java中ArrayList类的使用">
+<meta property="og:url" content="http://yoursite.com/2019/07/04/Java中ArrayList类的使用/index.html">
 <meta property="og:site_name" content="欢迎来到李滨洪的个人博客">
-<meta property="og:description" content="数组的定义方式可以分为动态方式和静态方式">
+<meta property="og:description" content="java.util.ArrayList 是大小可变的数组的实现，存储在内的数据称为元素。此类提供一些方法来操作内部存储 的 元素。 ArrayList 中可不断添加元素，其大小也自动增长。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-04T03:01:20.304Z">
+<meta property="og:updated_time" content="2019-07-04T09:31:00.058Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中数组的定义与访问">
-<meta name="twitter:description" content="数组的定义方式可以分为动态方式和静态方式">
+<meta name="twitter:title" content="Java中ArrayList类的使用">
+<meta name="twitter:description" content="java.util.ArrayList 是大小可变的数组的实现，存储在内的数据称为元素。此类提供一些方法来操作内部存储 的 元素。 ArrayList 中可不断添加元素，其大小也自动增长。">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到李滨洪的个人博客" type="application/atom+xml">
   
@@ -149,93 +149,105 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java中数组的定义方式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java中ArrayList类的使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java中数组的定义与访问
+      Java中ArrayList类的使用
     </h1>
   
 
         
-        <a href="/2019/07/04/Java中数组的定义方式/" class="archive-article-date">
-  	<time datetime="2019-07-04T02:32:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
+        <a href="/2019/07/04/Java中ArrayList类的使用/" class="archive-article-date">
+  	<time datetime="2019-07-04T09:09:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>数组的定义方式可以分为动态方式和静态方式</p>
+        <p><strong>java.util.ArrayList</strong> 是大小可变的数组的实现，存储在内的数据称为元素。此类提供一些方法来操作内部存储 的</p>
+<p>元素。 <strong>ArrayList</strong> 中可不断添加元素，其大小也自动增长。 </p>
 <a id="more"></a>
 
-<h3 id="数组定义方式一"><a href="#数组定义方式一" class="headerlink" title="数组定义方式一"></a><strong>数组定义方式一</strong></h3><p><font color="#BF3EFF"><strong>动态方式（指定数组的长度）</strong></font></p>
-<p><strong>格式：</strong></p>
-<p><font color="#66CD00"><strong>数组存储的数据类型[]数组名字 = new 数组存储的数据类型[长度];</strong></font></p>
-<p><strong>[] :</strong> 表示数组。</p>
-<p><strong>数组名字：</strong>为定义的数组起个变量名，满足标识符规范，可以使用名字操作数组。</p>
-<p><strong>new：</strong>关键字，创建数组使用的关键字。</p>
-<p><strong>数组存储的数据类型：</strong> 看创建的数组用来存储什么数据类型。</p>
-<p><strong>[长度]：</strong>数组的长度，表示数组容器中可以存储多少个元素。</p>
-<p><strong>例子：</strong></p>
-<p>定义可以存储3个整数的数组容器，代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+<h3 id="ArrayList使用步骤"><a href="#ArrayList使用步骤" class="headerlink" title="ArrayList使用步骤"></a><strong>ArrayList使用步骤</strong></h3><h4 id="1、查看类"><a href="#1、查看类" class="headerlink" title="1、查看类"></a><strong>1、查看类</strong></h4><p><code>java.util.ArrayList &lt;E&gt;</code><strong>：</strong>该类需要 import导入使后使用。</p>
+<p><font color="#CD2626"><code>&lt;E&gt;</code><strong>表示一种指定的数据类型，叫做泛型，表示我们将存储哪种引用类型的元素</strong></font></p>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt;</span><br><span class="line">ArrayList&lt;Student&gt;</span><br></pre></td></tr></table></figure>
 
+<h4 id="2、查看构造方法"><a href="#2、查看构造方法" class="headerlink" title="2、查看构造方法"></a><strong>2、查看构造方法</strong></h4><p><strong>public ArrayList()</strong> <strong>：</strong>构造一个内容为空的集合。</p>
+<p><strong>基本格式:</strong> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br></pre></td></tr></table></figure>
 
+<p><font color="#CD2626">在JDK 7后,右侧泛型的尖括号之内可以留空，但是&lt;&gt;仍然要写。 </font></p>
+<p><strong>简化格式：</strong> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
 
+<h4 id="4、查看成员方法"><a href="#4、查看成员方法" class="headerlink" title="4、查看成员方法"></a><strong>4、查看成员方法</strong></h4><p><strong>public boolean add(E e)</strong> <strong>：</strong> 将指定的元素添加到此集合的尾部。 参数 E e ，在构造ArrayList对象时， <e> 指定了什么数据类型，那么 add(E e) 方法中，只能添加什么数据类型的对象。 </e></p>
+<h4 id="ArrayList类常用方法"><a href="#ArrayList类常用方法" class="headerlink" title="ArrayList类常用方法"></a>ArrayList类常用方法</h4><p><font color="#9BCD9B"><strong>ArrayList类对于元素的操作,基本体现在——增、删、查。常用的方法有：</strong></font></p>
+<p><font color="#CD2626"><strong>public boolean add(E e)</strong> <strong>：</strong>将指定的元素添加到此集合的尾部。</font></p>
+<p><font color="#CD2626"><strong>public E remove(int index)</strong> <strong>：</strong>移除此集合中指定位置上的元素。返回被删除的元素。</font></p>
+<p><font color="#CD2626"><strong>public E get(int index)</strong> <strong>：</strong>返回此集合中指定位置上的元素。返回获取的元素。</font></p>
+<p><font color="#CD2626"><strong>public int size()</strong> <strong>：</strong>返回此集合中的元素数。遍历集合时，可以控制索引范围，防止越界。</font></p>
+<p><font color="#CD2626"><strong>contains(object obj)：</strong>判断是否含有指定元素</font></p>
+<p><font color="#CD2626"><strong>public E set(int index, String element)：</strong>把此集合中指定索引的元素，改为新的元素</font></p>
+<p>这些都是最基本的方法，操作非常简单，代码如下: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayListDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建集合对象</span></span><br><span class="line">        ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        list.add(<span class="string">"hello"</span>);</span><br><span class="line">        list.add(<span class="string">"world"</span>);</span><br><span class="line">        list.add(<span class="string">"java"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//public E get(int index):返回指定索引处的元素</span></span><br><span class="line">        System.out.println(<span class="string">"get:"</span>+list.get(<span class="number">0</span>));</span><br><span class="line">        System.out.println(<span class="string">"get:"</span>+list.get(<span class="number">1</span>));</span><br><span class="line">        System.out.println(<span class="string">"get:"</span>+list.get(<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//public int size():返回集合中的元素的个数</span></span><br><span class="line">        System.out.println(<span class="string">"size:"</span>+list.size());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//public E remove(int index):删除指定索引处的元素，返回被删除的元素</span></span><br><span class="line">        System.out.println(<span class="string">"remove:"</span>+list.remove(<span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历输出</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++)&#123;</span><br><span class="line">            System.out.println(list.get(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h4 id="ArrayList集合如何存储基本数据类型"><a href="#ArrayList集合如何存储基本数据类型" class="headerlink" title="ArrayList集合如何存储基本数据类型"></a>ArrayList集合如何存储基本数据类型</h4><p><strong>ArrayList</strong>对象不能存储<strong>基本类型</strong>，只能存储<strong>引用类型的数据</strong>。类似 <int> 不能写，但是存储<strong>基本数据类型对应的包装类型</strong>是可以的。</int></p>
+<p><font color="#CD2626">所以，想要存储<strong>基本类型数据</strong>， &lt;&gt; 中的数据类型，必须转换后才能编写，转换写法如下：</font></p>
+<table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>基本类型包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+</tbody></table>
+<p><font color="#CD2626"><strong>我们发现，只有Integer 和 Character 需要特殊记忆，其他基本类型只是首字母大写即可。</strong></font></p>
+<p><strong>自动装箱:</strong> 基本数据类型可以自动包装为包装类类型</p>
+<p><strong>自动拆箱:</strong> 包装类类型可以自动拆箱为基本数据类型</p>
+<h4 id="如何把随机数或者对象添加到ArrayList集合"><a href="#如何把随机数或者对象添加到ArrayList集合" class="headerlink" title="如何把随机数或者对象添加到ArrayList集合"></a>如何把随机数或者对象添加到ArrayList集合</h4><p><font color="#CD2626">生成6个1~33之间的随机整数,添加到集合,并遍历</font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayListDemo1</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建Random 对象</span></span><br><span class="line">    Random random = <span class="keyword">new</span> Random();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建ArrayList 对象</span></span><br><span class="line">    ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 添加随机数到集合</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">int</span> r = random.nextInt(<span class="number">33</span>) + <span class="number">1</span>;</span><br><span class="line">      list.add(r);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 遍历集合输出</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">      System.out.println(list.get(i));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="数组定义方式二"><a href="#数组定义方式二" class="headerlink" title="数组定义方式二"></a><strong>数组定义方式二</strong></h3><p><font color="#BF3EFF"><strong>静态方式（指定数组的元素）</strong></font></p>
-<p><strong>格式：</strong></p>
-<p><font color="#66CD00"><strong>数据类型[] 数组名 = new 数据类型[]{元素1,元素2,元素3…};</strong></font></p>
-<p>定义存储1，2，3，4，5整数的数组容器。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p><font color="#CD2626">自定义4个学生对象,添加到集合,并遍历</font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestStudent</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建集合对象</span></span><br><span class="line">        ArrayList&lt;Student&gt; list = <span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">        <span class="comment">//创建学生对象</span></span><br><span class="line">        Student s1 = <span class="keyword">new</span> Student(<span class="string">"赵丽颖"</span>,<span class="number">18</span>);</span><br><span class="line">        Student s2 = <span class="keyword">new</span> Student(<span class="string">"唐嫣"</span>,<span class="number">20</span>);</span><br><span class="line">        Student s3 = <span class="keyword">new</span> Student(<span class="string">"景甜"</span>,<span class="number">25</span>);</span><br><span class="line">        Student s4 = <span class="keyword">new</span> Student(<span class="string">"柳岩"</span>,<span class="number">19</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//把学生对象作为元素添加到集合中</span></span><br><span class="line">        list.add(s1);</span><br><span class="line">        list.add(s2);</span><br><span class="line">        list.add(s3);</span><br><span class="line">        list.add(s4);</span><br><span class="line">        <span class="comment">//遍历集合</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; list.size(); x++) &#123;</span><br><span class="line">            Student s = list.get(x);</span><br><span class="line">            System.out.println(s.getName()+<span class="string">"‐‐‐"</span>+s.getAge());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><font color="#66CD00"><strong>或者省略格式：（不能先声明后赋值，只能声明的同时赋值）</strong></font></p>
-<p><font color="#66CD00"><strong>数据类型[] 数组名 = {元素1,元素2,元素3…};</strong></font></p>
-<p>定义存储1，2，3，4，5整数的数组容器。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意:</strong></p>
-<p> <font color="#CD2626">1.如果使用静态方式创建数组,那么系统会根据元素的个数自动计算数组的长度</font></p>
-<p> <font color="#CD2626">2.静态方式创建数组右边的中括号里面不能写长度</font></p>
-<p><font color="#CD2626">3.静态方式的省略格式创建数组不能先声明后赋值,只能声明的同时直接赋值</font></p>
-<h3 id="数组的访问"><a href="#数组的访问" class="headerlink" title="数组的访问"></a>数组的访问</h3><p><font color="#CD2626">通过索引访问数组中的元素，数组的索引是从0开始的</font></p>
-<p>1、 取出数组中的元素</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr= &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">arr[<span class="number">0</span>];</span><br><span class="line">arr[<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
-
-<p>2、 修改数组中的元素</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[<span class="number">1</span>] =<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-
-<p>3、 往数组中储存元素</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">arr[<span class="number">0</span>] =<span class="number">5</span>;</span><br><span class="line">arr[<span class="number">1</span>] =<span class="number">7</span>;</span><br><span class="line">arr[<span class="number">2</span>] =<span class="number">8</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>格式：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数组名 [ 数组索引 ]</span><br></pre></td></tr></table></figure>
-
-<p><strong>索引:</strong>每一个存储到数组的元素，都会自动的拥有一个编号，从0开始，这个自动编号称为数组索引(index)</p>
-<p><font color="#CD2626"><strong>注意:</strong></font></p>
-<p>1.直接打印数组名,打印的是数组的地址值</p>
-<p>2.索引是从0开始,一直到”数组长度-1”   最大的索引是: 数组长度-1</p>
-<p>3.动态方式创建数组,数组中的元素有默认值</p>
-<p>  <font size="2"> <strong>整数类型的默认值都是 0</strong></font></p>
-<p>  <font size="2"><strong>浮点型的默认值是 0.0</strong></font></p>
-<p>  <font size="2"><strong>字符型的默认值是 ‘\u0000’</strong></font></p>
-<p>  <font size="2"><strong>布尔型的默认值是  false</strong></font></p>
-<p>  <font size="2"><strong>引用数据类型的默认值是 null</strong></font></p>
-<p>4.静态方式创建数组,数组中的元素也有默认值,只不过一初始化就被覆盖了</p>
-<p><strong>数组的长度:</strong>  </p>
-<p>数组名.length   返回的是数组长度,是一个int类型的值</p>
-<h3 id="数组常见异常"><a href="#数组常见异常" class="headerlink" title="数组常见异常"></a>数组常见异常</h3><p><font size="3" color="#BF3EFF"><strong>产生异常之后会导致程序结束</strong></font></p>
-<p><font size="3" color="#CD3333"><strong>数组索引越界异常:</strong> ArrayIndexOutOfBoundsException</font></p>
-<p>​        <font size="2">产生的原因: 访问了不存在的索引</font></p>
-<p>​        <font size="2">更改: 不要访问不存在的索引</font></p>
-<p><font size="3" color="#CD3333"><strong>数组空指针异常:</strong> NullPointerException</font></p>
-<p>​        <font size="2">产生的原因: 数组类型变量没有指向任何数组</font></p>
-<p>​        <font size="2">更改: 不要让数组类型的变量赋值为null</font></p>
 
       
 
@@ -275,7 +287,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java中的常用类</a>
         		</li>
       		
 		</ul>
@@ -294,18 +306,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/04/Java中数组的遍历/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/04/Java中String类的常用方法/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java中数组的遍历
+          Java中String类的常用方法
         
       </div>
     </a>
   
   
-    <a href="/2019/07/04/Java中数组的概念和特点/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java中数组的概念和特点</div>
+    <a href="/2019/07/04/Java中Random类的使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中Random类的使用</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java中数组的定义与访问 | 欢迎来到李滨洪的个人博客</title>
+  <title>Java中类的定义 | 欢迎来到李滨洪的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数组的定义方式可以分为动态方式和静态方式">
-<meta name="keywords" content="java基础">
+  <meta name="description" content="Java中用class描述现实世界的一类事物">
+<meta name="keywords" content="java面向对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中数组的定义与访问">
-<meta property="og:url" content="http://yoursite.com/2019/07/04/Java中数组的定义方式/index.html">
+<meta property="og:title" content="Java中类的定义">
+<meta property="og:url" content="http://yoursite.com/2019/07/04/Java中类的定义/index.html">
 <meta property="og:site_name" content="欢迎来到李滨洪的个人博客">
-<meta property="og:description" content="数组的定义方式可以分为动态方式和静态方式">
+<meta property="og:description" content="Java中用class描述现实世界的一类事物">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-04T03:01:20.304Z">
+<meta property="og:updated_time" content="2019-07-04T08:17:09.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中数组的定义与访问">
-<meta name="twitter:description" content="数组的定义方式可以分为动态方式和静态方式">
+<meta name="twitter:title" content="Java中类的定义">
+<meta name="twitter:description" content="Java中用class描述现实世界的一类事物">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到李滨洪的个人博客" type="application/atom+xml">
   
@@ -149,93 +149,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java中数组的定义方式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java中类的定义" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java中数组的定义与访问
+      Java中类的定义
     </h1>
   
 
         
-        <a href="/2019/07/04/Java中数组的定义方式/" class="archive-article-date">
-  	<time datetime="2019-07-04T02:32:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
+        <a href="/2019/07/04/Java中类的定义/" class="archive-article-date">
+  	<time datetime="2019-07-04T07:55:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>数组的定义方式可以分为动态方式和静态方式</p>
+        <p> Java中用class描述现实世界的一类事物</p>
 <a id="more"></a>
 
-<h3 id="数组定义方式一"><a href="#数组定义方式一" class="headerlink" title="数组定义方式一"></a><strong>数组定义方式一</strong></h3><p><font color="#BF3EFF"><strong>动态方式（指定数组的长度）</strong></font></p>
-<p><strong>格式：</strong></p>
-<p><font color="#66CD00"><strong>数组存储的数据类型[]数组名字 = new 数组存储的数据类型[长度];</strong></font></p>
-<p><strong>[] :</strong> 表示数组。</p>
-<p><strong>数组名字：</strong>为定义的数组起个变量名，满足标识符规范，可以使用名字操作数组。</p>
-<p><strong>new：</strong>关键字，创建数组使用的关键字。</p>
-<p><strong>数组存储的数据类型：</strong> 看创建的数组用来存储什么数据类型。</p>
-<p><strong>[长度]：</strong>数组的长度，表示数组容器中可以存储多少个元素。</p>
-<p><strong>例子：</strong></p>
-<p>定义可以存储3个整数的数组容器，代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+<p><font color="#00CD66">现实世界的一类事物：</font></p>
+<p><strong>属性</strong>：事物的状态信息。<br><strong>行为</strong>：事物能够做什么。</p>
+<p><font color="#00CD66"> Java中用class描述事物也是如此：</font></p>
+<p><strong>成员变量</strong>：对应事物的<strong>属性</strong><br><strong>成员方法</strong>：对应事物的<strong>行为</strong></p>
+<p><font color="#0000EE"><strong>类定义的格式</strong> </font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassName</span> </span>&#123;</span><br><span class="line">  <span class="comment">//成员变量</span></span><br><span class="line">  <span class="comment">//成员方法 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p><strong>定义类：</strong>就是定义类的成员，包括成员变量和成员方法</p>
+<p><strong>成员变量：</strong>和以前定义变量几乎是一样的。只不过位置发生了改变。在类中，方法外。</p>
+<p><strong>成员方法：</strong>和以前定义方法几乎是一样的。只不过把static去掉，static的作用在面向对象</p>
+<p><font color="#0000EE"> 类的定义格式举例：</font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="comment">//定义成员变量</span></span><br><span class="line">    <span class="keyword">private</span> String name;<span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;<span class="comment">//年龄</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">char</span> gendar;<span class="comment">//性别</span></span><br><span class="line">    <span class="comment">//定义成员方法</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * study方法</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">study</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"好好学学习，天天向上"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * sleep();睡觉</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"学习一天了，可以睡觉了"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
-
-<h3 id="数组定义方式二"><a href="#数组定义方式二" class="headerlink" title="数组定义方式二"></a><strong>数组定义方式二</strong></h3><p><font color="#BF3EFF"><strong>静态方式（指定数组的元素）</strong></font></p>
-<p><strong>格式：</strong></p>
-<p><font color="#66CD00"><strong>数据类型[] 数组名 = new 数据类型[]{元素1,元素2,元素3…};</strong></font></p>
-<p>定义存储1，2，3，4，5整数的数组容器。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#66CD00"><strong>或者省略格式：（不能先声明后赋值，只能声明的同时赋值）</strong></font></p>
-<p><font color="#66CD00"><strong>数据类型[] 数组名 = {元素1,元素2,元素3…};</strong></font></p>
-<p>定义存储1，2，3，4，5整数的数组容器。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意:</strong></p>
-<p> <font color="#CD2626">1.如果使用静态方式创建数组,那么系统会根据元素的个数自动计算数组的长度</font></p>
-<p> <font color="#CD2626">2.静态方式创建数组右边的中括号里面不能写长度</font></p>
-<p><font color="#CD2626">3.静态方式的省略格式创建数组不能先声明后赋值,只能声明的同时直接赋值</font></p>
-<h3 id="数组的访问"><a href="#数组的访问" class="headerlink" title="数组的访问"></a>数组的访问</h3><p><font color="#CD2626">通过索引访问数组中的元素，数组的索引是从0开始的</font></p>
-<p>1、 取出数组中的元素</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr= &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">arr[<span class="number">0</span>];</span><br><span class="line">arr[<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
-
-<p>2、 修改数组中的元素</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[<span class="number">1</span>] =<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-
-<p>3、 往数组中储存元素</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">arr[<span class="number">0</span>] =<span class="number">5</span>;</span><br><span class="line">arr[<span class="number">1</span>] =<span class="number">7</span>;</span><br><span class="line">arr[<span class="number">2</span>] =<span class="number">8</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>格式：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数组名 [ 数组索引 ]</span><br></pre></td></tr></table></figure>
-
-<p><strong>索引:</strong>每一个存储到数组的元素，都会自动的拥有一个编号，从0开始，这个自动编号称为数组索引(index)</p>
-<p><font color="#CD2626"><strong>注意:</strong></font></p>
-<p>1.直接打印数组名,打印的是数组的地址值</p>
-<p>2.索引是从0开始,一直到”数组长度-1”   最大的索引是: 数组长度-1</p>
-<p>3.动态方式创建数组,数组中的元素有默认值</p>
-<p>  <font size="2"> <strong>整数类型的默认值都是 0</strong></font></p>
-<p>  <font size="2"><strong>浮点型的默认值是 0.0</strong></font></p>
-<p>  <font size="2"><strong>字符型的默认值是 ‘\u0000’</strong></font></p>
-<p>  <font size="2"><strong>布尔型的默认值是  false</strong></font></p>
-<p>  <font size="2"><strong>引用数据类型的默认值是 null</strong></font></p>
-<p>4.静态方式创建数组,数组中的元素也有默认值,只不过一初始化就被覆盖了</p>
-<p><strong>数组的长度:</strong>  </p>
-<p>数组名.length   返回的是数组长度,是一个int类型的值</p>
-<h3 id="数组常见异常"><a href="#数组常见异常" class="headerlink" title="数组常见异常"></a>数组常见异常</h3><p><font size="3" color="#BF3EFF"><strong>产生异常之后会导致程序结束</strong></font></p>
-<p><font size="3" color="#CD3333"><strong>数组索引越界异常:</strong> ArrayIndexOutOfBoundsException</font></p>
-<p>​        <font size="2">产生的原因: 访问了不存在的索引</font></p>
-<p>​        <font size="2">更改: 不要访问不存在的索引</font></p>
-<p><font size="3" color="#CD3333"><strong>数组空指针异常:</strong> NullPointerException</font></p>
-<p>​        <font size="2">产生的原因: 数组类型变量没有指向任何数组</font></p>
-<p>​        <font size="2">更改: 不要让数组类型的变量赋值为null</font></p>
 
       
 
@@ -275,7 +224,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">java面向对象</a>
         		</li>
       		
 		</ul>
@@ -294,18 +243,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/04/Java中数组的遍历/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/04/Java中对象的创建与调用/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java中数组的遍历
+          Java中对象的创建与调用
         
       </div>
     </a>
   
   
-    <a href="/2019/07/04/Java中数组的概念和特点/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java中数组的概念和特点</div>
+    <a href="/2019/07/04/Java面向对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java面向对象</div>
       <i class="icon-circle-right"></i>
     </a>
   

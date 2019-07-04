@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java中数组的定义与访问 | 欢迎来到李滨洪的个人博客</title>
+  <title>Java中Scanner类的使用 | 欢迎来到李滨洪的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数组的定义方式可以分为动态方式和静态方式">
-<meta name="keywords" content="java基础">
+  <meta name="description" content="一个可以解析基本类型和字符串的简单文本扫描器。">
+<meta name="keywords" content="java中的常用类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中数组的定义与访问">
-<meta property="og:url" content="http://yoursite.com/2019/07/04/Java中数组的定义方式/index.html">
+<meta property="og:title" content="Java中Scanner类的使用">
+<meta property="og:url" content="http://yoursite.com/2019/07/04/Java中Scanner类的使用/index.html">
 <meta property="og:site_name" content="欢迎来到李滨洪的个人博客">
-<meta property="og:description" content="数组的定义方式可以分为动态方式和静态方式">
+<meta property="og:description" content="一个可以解析基本类型和字符串的简单文本扫描器。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-04T03:01:20.304Z">
+<meta property="og:updated_time" content="2019-07-04T09:11:33.900Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中数组的定义与访问">
-<meta name="twitter:description" content="数组的定义方式可以分为动态方式和静态方式">
+<meta name="twitter:title" content="Java中Scanner类的使用">
+<meta name="twitter:description" content="一个可以解析基本类型和字符串的简单文本扫描器。">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到李滨洪的个人博客" type="application/atom+xml">
   
@@ -149,93 +149,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java中数组的定义方式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java中Scanner类的使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java中数组的定义与访问
+      Java中Scanner类的使用
     </h1>
   
 
         
-        <a href="/2019/07/04/Java中数组的定义方式/" class="archive-article-date">
-  	<time datetime="2019-07-04T02:32:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
+        <a href="/2019/07/04/Java中Scanner类的使用/" class="archive-article-date">
+  	<time datetime="2019-07-04T08:52:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>数组的定义方式可以分为动态方式和静态方式</p>
+        <p>一个可以解析基本类型和字符串的简单文本扫描器。 </p>
 <a id="more"></a>
 
-<h3 id="数组定义方式一"><a href="#数组定义方式一" class="headerlink" title="数组定义方式一"></a><strong>数组定义方式一</strong></h3><p><font color="#BF3EFF"><strong>动态方式（指定数组的长度）</strong></font></p>
-<p><strong>格式：</strong></p>
-<p><font color="#66CD00"><strong>数组存储的数据类型[]数组名字 = new 数组存储的数据类型[长度];</strong></font></p>
-<p><strong>[] :</strong> 表示数组。</p>
-<p><strong>数组名字：</strong>为定义的数组起个变量名，满足标识符规范，可以使用名字操作数组。</p>
-<p><strong>new：</strong>关键字，创建数组使用的关键字。</p>
-<p><strong>数组存储的数据类型：</strong> 看创建的数组用来存储什么数据类型。</p>
-<p><strong>[长度]：</strong>数组的长度，表示数组容器中可以存储多少个元素。</p>
-<p><strong>例子：</strong></p>
-<p>定义可以存储3个整数的数组容器，代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+<h4 id="1、包-java-util-需要导包"><a href="#1、包-java-util-需要导包" class="headerlink" title="1、包:java.util  需要导包"></a><strong>1、包:java.util  需要导包</strong></h4><h4 id="2、查看类的解释说明"><a href="#2、查看类的解释说明" class="headerlink" title="2、查看类的解释说明:"></a><strong>2、查看类的解释说明:</strong></h4><p><strong>Scanner类:</strong> 一个可以使用正则表达式来解析基本类型和字符串的简单 文本扫描器</p>
+<h4 id="3、查看构造方法"><a href="#3、查看构造方法" class="headerlink" title="3、查看构造方法:"></a><strong>3、查看构造方法:</strong></h4><p><font color="#CDCD00"><strong>Scanner(InputStream source)</strong>  构造一个新的 Scanner，它生成的值是从指定的输入流扫描</font></p>
+<p><font color="#CDCD00"><strong>InputStream:</strong> 输入流</font></p>
+<p><font color="#CDCD00"><strong>System.in:</strong> 代表从键盘录入</font></p>
+<h4 id="4、查看成员方法"><a href="#4、查看成员方法" class="headerlink" title="4、查看成员方法:"></a><strong>4、查看成员方法:</strong></h4><p><font color="#7D26CD"><strong>String next()</strong>  查找并返回来自此扫描器的下一个完整标记–&gt; 获取一个字符串</font></p>
+<p><font color="#7D26CD"><strong>int nextInt()</strong>  将输入信息的下一个标记扫描为一个 int—&gt; 获取一个int类型的数据</font></p>
+<p><font color="#7D26CD"><strong>String nextLine()</strong>  此扫描器执行当前行，并返回跳过的输入信息—&gt;获取一行数</font></p>
+<p><font color="#CD2626">例如，以下代码使用户能够从 System.in 中读取一个数： </font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApiScanner</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建对象接收键盘录入的数据</span></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);<span class="comment">//创建一个scanner类的对象</span></span><br><span class="line">        <span class="comment">//录入数据</span></span><br><span class="line">        System.out.print(<span class="string">"请输入你的名字："</span>);</span><br><span class="line">        String input = sc.next();</span><br><span class="line">        <span class="comment">//输出数据</span></span><br><span class="line">        System.out.println(input);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
-
-
-<h3 id="数组定义方式二"><a href="#数组定义方式二" class="headerlink" title="数组定义方式二"></a><strong>数组定义方式二</strong></h3><p><font color="#BF3EFF"><strong>静态方式（指定数组的元素）</strong></font></p>
-<p><strong>格式：</strong></p>
-<p><font color="#66CD00"><strong>数据类型[] 数组名 = new 数据类型[]{元素1,元素2,元素3…};</strong></font></p>
-<p>定义存储1，2，3，4，5整数的数组容器。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><font color="#66CD00"><strong>或者省略格式：（不能先声明后赋值，只能声明的同时赋值）</strong></font></p>
-<p><font color="#66CD00"><strong>数据类型[] 数组名 = {元素1,元素2,元素3…};</strong></font></p>
-<p>定义存储1，2，3，4，5整数的数组容器。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意:</strong></p>
-<p> <font color="#CD2626">1.如果使用静态方式创建数组,那么系统会根据元素的个数自动计算数组的长度</font></p>
-<p> <font color="#CD2626">2.静态方式创建数组右边的中括号里面不能写长度</font></p>
-<p><font color="#CD2626">3.静态方式的省略格式创建数组不能先声明后赋值,只能声明的同时直接赋值</font></p>
-<h3 id="数组的访问"><a href="#数组的访问" class="headerlink" title="数组的访问"></a>数组的访问</h3><p><font color="#CD2626">通过索引访问数组中的元素，数组的索引是从0开始的</font></p>
-<p>1、 取出数组中的元素</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr= &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">arr[<span class="number">0</span>];</span><br><span class="line">arr[<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
-
-<p>2、 修改数组中的元素</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[<span class="number">1</span>] =<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-
-<p>3、 往数组中储存元素</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">arr[<span class="number">0</span>] =<span class="number">5</span>;</span><br><span class="line">arr[<span class="number">1</span>] =<span class="number">7</span>;</span><br><span class="line">arr[<span class="number">2</span>] =<span class="number">8</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>格式：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数组名 [ 数组索引 ]</span><br></pre></td></tr></table></figure>
-
-<p><strong>索引:</strong>每一个存储到数组的元素，都会自动的拥有一个编号，从0开始，这个自动编号称为数组索引(index)</p>
-<p><font color="#CD2626"><strong>注意:</strong></font></p>
-<p>1.直接打印数组名,打印的是数组的地址值</p>
-<p>2.索引是从0开始,一直到”数组长度-1”   最大的索引是: 数组长度-1</p>
-<p>3.动态方式创建数组,数组中的元素有默认值</p>
-<p>  <font size="2"> <strong>整数类型的默认值都是 0</strong></font></p>
-<p>  <font size="2"><strong>浮点型的默认值是 0.0</strong></font></p>
-<p>  <font size="2"><strong>字符型的默认值是 ‘\u0000’</strong></font></p>
-<p>  <font size="2"><strong>布尔型的默认值是  false</strong></font></p>
-<p>  <font size="2"><strong>引用数据类型的默认值是 null</strong></font></p>
-<p>4.静态方式创建数组,数组中的元素也有默认值,只不过一初始化就被覆盖了</p>
-<p><strong>数组的长度:</strong>  </p>
-<p>数组名.length   返回的是数组长度,是一个int类型的值</p>
-<h3 id="数组常见异常"><a href="#数组常见异常" class="headerlink" title="数组常见异常"></a>数组常见异常</h3><p><font size="3" color="#BF3EFF"><strong>产生异常之后会导致程序结束</strong></font></p>
-<p><font size="3" color="#CD3333"><strong>数组索引越界异常:</strong> ArrayIndexOutOfBoundsException</font></p>
-<p>​        <font size="2">产生的原因: 访问了不存在的索引</font></p>
-<p>​        <font size="2">更改: 不要访问不存在的索引</font></p>
-<p><font size="3" color="#CD3333"><strong>数组空指针异常:</strong> NullPointerException</font></p>
-<p>​        <font size="2">产生的原因: 数组类型变量没有指向任何数组</font></p>
-<p>​        <font size="2">更改: 不要让数组类型的变量赋值为null</font></p>
 
       
 
@@ -275,7 +221,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java中的常用类</a>
         		</li>
       		
 		</ul>
@@ -294,18 +240,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/04/Java中数组的遍历/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/04/Java中Random类的使用/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java中数组的遍历
+          Java中Random类的使用
         
       </div>
     </a>
   
   
-    <a href="/2019/07/04/Java中数组的概念和特点/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java中数组的概念和特点</div>
+    <a href="/2019/07/04/Java中面向对象三大特性之—封装/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中面向对象三大特性之—封装</div>
       <i class="icon-circle-right"></i>
     </a>
   
