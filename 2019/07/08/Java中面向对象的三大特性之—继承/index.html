@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="欢迎来到李滨洪的个人博客">
 <meta property="og:description" content="多个类中存在相同属性和行为时，将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要继承那一个类即可。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-08T16:41:47.663Z">
+<meta property="og:updated_time" content="2019-07-08T16:46:09.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中面向对象的三大特性之—继承">
 <meta name="twitter:description" content="多个类中存在相同属性和行为时，将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要继承那一个类即可。">
@@ -238,17 +238,11 @@
 <h3 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4 注意事项"></a>4 注意事项</h3><p>A：子类只能继承父类所有非私有的成员(成员方法和成员变量)</p>
 <p>B：子类不能继承父类的构造方法，但是可以通过super()关键字去访问父类构造方法</p>
 <p>C：不要为了部分功能而去继承</p>
-<ol>
-<li><p>子类的空参(有参)构造方法会默认调用父类的空参构造方法</p>
-</li>
-<li><p>在子类中使用super()访问父类的空参(有参)构造方法必须放在第一行</p>
-</li>
-<li><p>子类方法覆盖父类方法，必须要保证权限大于等于父类权限。</p>
-<p><strong>private(本类中)  &lt;   (default 默认)(同一个包)  &lt;  protected(本类和子类)  &lt;  public(当前项目中)</strong>  </p>
-</li>
-<li><p>子类方法覆盖父类方法，返回值类型、函数名和参数列表都要一模一样。</p>
-</li>
-</ol>
+<p>1、子类的空参(有参)构造方法会默认调用父类的空参构造方法</p>
+<p>2、在子类中使用super()访问父类的空参(有参)构造方法必须放在第一行</p>
+<p>3、子类方法覆盖父类方法，必须要保证权限大于等于父类权限。</p>
+<p>   <strong>private(本类中)  &lt;   (default 默认)(同一个包)  &lt;  protected(本类和子类)  &lt;  public(当前项目中)</strong>  </p>
+<p>4、子类方法覆盖父类方法，返回值类型、函数名和参数列表都要一模一样。</p>
 <h3 id="5-继承后如何访问成员变量"><a href="#5-继承后如何访问成员变量" class="headerlink" title="5 继承后如何访问成员变量"></a>5 继承后如何访问成员变量</h3><p><strong>父子类中不同名的成员变量：</strong>正常访问,无影响</p>
 <p><strong>父子类中同名的成员变量：</strong> 遵守就近原则</p>
 <p><font color="#7CCD7C">1. 优先在局部位置找，如果局部位置有该变量,就直接使用</font></p>
