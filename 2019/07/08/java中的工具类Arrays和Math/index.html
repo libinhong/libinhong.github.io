@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo命令使用 | 欢迎来到李滨洪的个人博客</title>
+  <title>java中的工具类Arrays和Math | 欢迎来到李滨洪的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo简单教程">
-<meta name="keywords" content="hexo使用教程">
+  <meta name="description" content="1 Arrays类java.util.Arrays  此类包含用来操作数组的各种方法，比如排序和搜索等。其所有方法均为静态方法，调用起来非常简单。">
+<meta name="keywords" content="java中的常用类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo命令使用">
-<meta property="og:url" content="http://yoursite.com/2019/07/01/hello-world/index.html">
+<meta property="og:title" content="java中的工具类Arrays和Math">
+<meta property="og:url" content="http://yoursite.com/2019/07/08/java中的工具类Arrays和Math/index.html">
 <meta property="og:site_name" content="欢迎来到李滨洪的个人博客">
-<meta property="og:description" content="hexo简单教程">
+<meta property="og:description" content="1 Arrays类java.util.Arrays  此类包含用来操作数组的各种方法，比如排序和搜索等。其所有方法均为静态方法，调用起来非常简单。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-03T11:03:08.351Z">
+<meta property="og:updated_time" content="2019-07-08T15:45:56.149Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo命令使用">
-<meta name="twitter:description" content="hexo简单教程">
+<meta name="twitter:title" content="java中的工具类Arrays和Math">
+<meta name="twitter:description" content="1 Arrays类java.util.Arrays  此类包含用来操作数组的各种方法，比如排序和搜索等。其所有方法均为静态方法，调用起来非常简单。">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到李滨洪的个人博客" type="application/atom+xml">
   
@@ -149,43 +149,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-java中的工具类Arrays和Math" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo命令使用
+      java中的工具类Arrays和Math
     </h1>
   
 
         
-        <a href="/2019/07/01/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-01T10:45:01.155Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
+        <a href="/2019/07/08/java中的工具类Arrays和Math/" class="archive-article-date">
+  	<time datetime="2019-07-08T15:33:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="hexo简单教程"><a href="#hexo简单教程" class="headerlink" title="hexo简单教程"></a>hexo简单教程</h3><a id="more"></a> 
+        <h3 id="1-Arrays类"><a href="#1-Arrays类" class="headerlink" title="1 Arrays类"></a>1 Arrays类</h3><p><code>java.util.Arrays</code>  此类包含用来操作数组的各种方法，比如排序和搜索等。其所有方法均为静态方法，调用起来非常简单。</p>
+<a id="more"></a>
 
-<h3 id="创建一个新帖子"><a href="#创建一个新帖子" class="headerlink" title="创建一个新帖子"></a>创建一个新帖子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-1-特点"><a href="#1-1-特点" class="headerlink" title="1.1 特点"></a>1.1 特点</h4><p><font color="#red"><strong>该类中的方法都是静态方法,所以可以直接使用类名.方法名(实参)调用</strong> </font></p>
+<h4 id="1-2-常用成员方法"><a href="#1-2-常用成员方法" class="headerlink" title="1.2 常用成员方法"></a>1.2 常用成员方法</h4><p><code>public static String toString(int[] a)</code> ：返回指定数组内容的字符串表示形式。</p>
+<p>实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 定义int 数组</span></span><br><span class="line">  <span class="keyword">int</span>[] arr  =  &#123;<span class="number">2</span>,<span class="number">34</span>,<span class="number">35</span>,<span class="number">4</span>,<span class="number">657</span>,<span class="number">8</span>,<span class="number">69</span>,<span class="number">9</span>&#125;;</span><br><span class="line">  <span class="comment">// 打印数组,输出地址值</span></span><br><span class="line">  System.out.println(arr); <span class="comment">// [I@2ac1fdc4</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 数组内容转为字符串</span></span><br><span class="line">  String s = Arrays.toString(arr);</span><br><span class="line">  <span class="comment">// 打印字符串,输出内容</span></span><br><span class="line">  System.out.println(s); <span class="comment">// [2, 34, 35, 4, 657, 8, 69, 9]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>更多信息: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">或者</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p><code>public static void sort(int[] a)</code> ：对指定的 int 型数组按数字升序进行排序。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 定义int 数组</span></span><br><span class="line">  <span class="keyword">int</span>[] arr  =  &#123;<span class="number">24</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">48</span>, <span class="number">4</span>, <span class="number">46</span>, <span class="number">35</span>, <span class="number">11</span>, <span class="number">6</span>, <span class="number">2</span>&#125;;</span><br><span class="line">  System.out.println(<span class="string">"排序前:"</span>+ Arrays.toString(arr)); <span class="comment">// 排序前:[24, 7, 5, 48, 4, 46, 35, 11, 6, 2]</span></span><br><span class="line">  <span class="comment">// 升序排序</span></span><br><span class="line">  Arrays.sort(arr);</span><br><span class="line">  System.out.println(<span class="string">"排序后:"</span>+ Arrays.toString(arr));<span class="comment">// 排序后:[2, 4, 5, 6, 7, 11, 24, 35, 46, 48]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>更多信息: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">或者</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-
-<p>更多信息: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">清除缓存文件 db.json 和已生成的静态文件 <span class="keyword">public</span> 。</span><br><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
-
-<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">或者</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
-<p>更多信息: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h3 id="如果hexo-d-时出现-ERROR-Deployer-not-found-git"><a href="#如果hexo-d-时出现-ERROR-Deployer-not-found-git" class="headerlink" title="如果hexo d 时出现 ERROR Deployer not found: git"></a>如果hexo d 时出现 ERROR Deployer not found: git</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">可以在blog目录下运行</span><br><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<h3 id="2-Math类"><a href="#2-Math类" class="headerlink" title="2 Math类"></a>2 Math类</h3><p><code>java.lang.Math</code> 类包含用于执行基本数学运算的方法，如初等指数、对数、平方根和三角函数。类似这样的工具类。</p>
+<h4 id="2-1-特点"><a href="#2-1-特点" class="headerlink" title="2.1 特点"></a>2.1 特点</h4><p><font color="red"><strong>该类中的方法都是静态方法,所以可以直接使用类名.方法名(实参)调用</strong> </font></p>
+<h4 id="2-2-常用成员方法"><a href="#2-2-常用成员方法" class="headerlink" title="2.2 常用成员方法:"></a>2.2 <strong>常用成员方法:</strong></h4><p><font color="#8B5A00"><strong>public static double abs(double a)</strong> ：返回 double 值的绝对值。</font></p>
+<p><font color="#8B5A00"><strong>public static double ceil(double a)</strong> ：返回大于等于参数的最小的整数。</font></p>
+<p><font color="#8B5A00"><strong>public static double floor(double a)</strong> ：返回小于等于参数最大的整数。</font></p>
+<p><font color="#8B5A00"><strong>public static long round(double a)</strong> ：返回最接近参数的 long。(相当于四舍五入方法)</font></p>
+<p><font color="#8B5A00"><strong>public static int max(int a, int b) ：</strong> 返回两个 int 值中较大的一个。</font></p>
+<p><font color="#8B5A00"><strong>public static int min(int a, int b)：</strong> 返回两个 int 值中较小的一个。</font></p>
+<p><strong>2.3 综合案例</strong></p>
+<p><strong>计算在 -10.8 到5.9 之间，绝对值大于6 或者小于2.1 的整数有多少个？</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MathTest</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 定义最小值</span></span><br><span class="line">    <span class="keyword">double</span> min = -<span class="number">10.8</span>;</span><br><span class="line">    <span class="comment">// 定义最大值</span></span><br><span class="line">    <span class="keyword">double</span> max = <span class="number">5.9</span>;</span><br><span class="line">    <span class="comment">// 定义变量计数</span></span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 范围内循环</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">double</span> i = Math.ceil(min); i &lt;= max; i++) &#123;</span><br><span class="line">      <span class="comment">// 获取绝对值并判断</span></span><br><span class="line">      <span class="keyword">if</span> (Math.abs(i) &gt; <span class="number">6</span> || Math.abs(i) &lt; <span class="number">2.1</span>) &#123;</span><br><span class="line">        <span class="comment">// 计数</span></span><br><span class="line">        count++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">"个数为: "</span> + count + <span class="string">" 个"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -200,7 +205,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">hexo使用教程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java中的常用类</a>
         		</li>
       		
 		</ul>
@@ -219,15 +224,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/02/Java中的标识符/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java中的标识符
-        
-      </div>
-    </a>
   
+    <a href="/2019/07/08/Java中的static关键字/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中的static关键字</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

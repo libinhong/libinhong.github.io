@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>String类的练习 | 欢迎来到李滨洪的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="统计一个字符串中大小写字母及数字字符个数">
+  <meta name="description" content="统计一个字符串中大小写字母、数字字符的个数">
 <meta name="keywords" content="java中的常用类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="String类的练习">
 <meta property="og:url" content="http://yoursite.com/2019/07/04/String类的练习/index.html">
 <meta property="og:site_name" content="欢迎来到李滨洪的个人博客">
-<meta property="og:description" content="统计一个字符串中大小写字母及数字字符个数">
+<meta property="og:description" content="统计一个字符串中大小写字母、数字字符的个数">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-04T15:53:28.910Z">
+<meta property="og:updated_time" content="2019-07-08T14:09:58.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String类的练习">
-<meta name="twitter:description" content="统计一个字符串中大小写字母及数字字符个数">
+<meta name="twitter:description" content="统计一个字符串中大小写字母、数字字符的个数">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到李滨洪的个人博客" type="application/atom+xml">
   
@@ -165,16 +165,11 @@
   	<time datetime="2019-07-04T15:50:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
 </a>
         
-
-        <span class="archive-article-date">
-            阅读量 <span id="busuanzi_value_page_pv"></span>
-        </span>
-    
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>统计一个字符串中大小写字母及数字字符个数</p>
+        <p>统计一个字符串中大小写字母、数字字符的个数</p>
 <a id="more"></a>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringPractice</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建一个文本扫描器</span></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">"请输入一个字符串："</span>);</span><br><span class="line">        String str = sc.next();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义三个变量用来统计大写字母，小写字母，数字的个数</span></span><br><span class="line">        <span class="keyword">int</span> bigCount = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> smallCount = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> numCount = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历字符串，对每个字符进行判断</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;str.length();i++)&#123;</span><br><span class="line">            <span class="keyword">char</span> chs = str.charAt(i);</span><br><span class="line">            <span class="comment">//如果</span></span><br><span class="line">            <span class="keyword">if</span> (chs &gt;= <span class="string">'A'</span> &amp;&amp; chs &lt;= <span class="string">'Z'</span>)&#123;</span><br><span class="line">                bigCount++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (chs &gt;= <span class="string">'a'</span> &amp;&amp; chs &lt;= <span class="string">'z'</span>)&#123;</span><br><span class="line">                smallCount++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (chs &gt;= <span class="string">'0'</span> &amp;&amp; chs &lt;= <span class="string">'9'</span>)&#123;</span><br><span class="line">                numCount++;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"该字符"</span>+chs+<span class="string">"非法"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//输出结果</span></span><br><span class="line">        System.out.println(<span class="string">"大写字符："</span>+bigCount+<span class="string">"个"</span>);</span><br><span class="line">        System.out.println(<span class="string">"小写字符："</span>+smallCount+<span class="string">"个"</span>);</span><br><span class="line">        System.out.println(<span class="string">"数字字符："</span>+numCount+<span class="string">"个"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -182,37 +177,6 @@
 
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/geren/weixin.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-<!-- 添加代码  -->
-<span id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-</span>
-
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -241,6 +205,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/07/08/Java中的static关键字/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java中的static关键字
+        
+      </div>
+    </a>
   
   
     <a href="/2019/07/04/Java中String类的常用方法/" id="article-nav-older" class="article-nav-link-wrap">
@@ -295,10 +268,7 @@
     </div>
   </div>
 </footer>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span id="busuanzi_container_site_uv"> 
-  本站访客数<span id="busuanzi_value_site_uv"></span>人次
-</span>
+
     </div>
     <script>
 	var yiliaConfig = {
