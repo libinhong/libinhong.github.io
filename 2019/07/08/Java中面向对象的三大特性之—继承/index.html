@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="欢迎来到李滨洪的个人博客">
 <meta property="og:description" content="多个类中存在相同属性和行为时，将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要继承那一个类即可。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-08T16:46:09.433Z">
+<meta property="og:updated_time" content="2019-07-09T00:30:23.248Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中面向对象的三大特性之—继承">
 <meta name="twitter:description" content="多个类中存在相同属性和行为时，将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要继承那一个类即可。">
@@ -252,12 +252,13 @@
 <p><strong>super：</strong>代表当前对象父类的引用</p>
 <h4 id="6-1-this和super的使用区别"><a href="#6-1-this和super的使用区别" class="headerlink" title="6.1 this和super的使用区别"></a>6.1 <strong>this和super的使用区别</strong></h4><h5 id="6-1-1-调用成员变量"><a href="#6-1-1-调用成员变量" class="headerlink" title="6.1.1 调用成员变量"></a>6.1.1 调用成员变量</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.成员变量    	--    本类的</span><br><span class="line"><span class="keyword">super</span>.成员变量    	--    父类的</span><br></pre></td></tr></table></figure>
 
-<h5 id="6-1-2-调用成员方法"><a href="#6-1-2-调用成员方法" class="headerlink" title="6.1.2 调用成员方法"></a><strong>6.1.2 调用成员方法</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>(...)    	--    本类的构造方法</span><br><span class="line"><span class="keyword">super</span>(...)   	--    父类的构造方法</span><br></pre></td></tr></table></figure>
+<h5 id="6-1-2-调用成员方法"><a href="#6-1-2-调用成员方法" class="headerlink" title="6.1.2 调用成员方法"></a><strong>6.1.2 调用成员方法</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.成员方法名()  	--    本类的    </span><br><span class="line"><span class="keyword">super</span>.成员方法名()   --    父类的</span><br></pre></td></tr></table></figure>
+
+<p><strong>6.1.3 调用成员方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>(...)    	--    本类的构造方法</span><br><span class="line"><span class="keyword">super</span>(...)   	--    父类的构造方法</span><br></pre></td></tr></table></figure>
 
 <p><strong>代码实例</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"animal : eat"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"cat : eat"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eatTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.eat();   <span class="comment">// this  调用本类的方法</span></span><br><span class="line">        <span class="keyword">super</span>.eat();  <span class="comment">// super 调用父类的方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExtendsDemo08</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Animal a = <span class="keyword">new</span> Animal();</span><br><span class="line">        a.eat();</span><br><span class="line">        Cat c = <span class="keyword">new</span> Cat();</span><br><span class="line">        c.eatTest();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">输出结果为：</span><br><span class="line">animal : eat</span><br><span class="line">cat : eat</span><br><span class="line">animal : eat</span><br></pre></td></tr></table></figure>
-
-<h5 id="6-1-2-调用构造方法"><a href="#6-1-2-调用构造方法" class="headerlink" title="6.1.2 调用构造方法"></a>6.1.2 调用构造方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>(...)    	--    本类的构造方法</span><br><span class="line"><span class="keyword">super</span>(...)   	--    父类的构造方法</span><br></pre></td></tr></table></figure>
 
 <p><font color="#7CCD7C"> 注意：子类的每个构造方法中均有默认的<code>super()</code>，调用父类的空参构造。手动调用父类构造会覆盖默认的super()。<code>super()</code> 和 <code>this()</code> 都必须是在构造方法的第一行，所以不能同时出现。</font></p>
 <h3 id="7-方法重写"><a href="#7-方法重写" class="headerlink" title="7 方法重写"></a>7 方法重写</h3><p><strong>方法的重载:</strong> 在同一个类中,出现多个同名的方法,参数列表不同,与返回值类型,修饰符无关</p>
@@ -434,11 +435,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">java面向对象</a>
+                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
+                <a href="javascript:void(0)" class="js-tag color4">java面向对象</a>
               </li>
              
               <li class="article-tag-list-item">
