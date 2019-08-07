@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: java面型对象 | 欢迎来到李滨洪的个人博客</title>
+  <title>Java中的StringBuilder类 | 欢迎来到李滨洪的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="欢迎来到李滨洪的个人博客">
-<meta property="og:url" content="http://yoursite.com/tags/java面型对象/index.html">
+  <meta name="description" content="String类：表示字符串,但是是不可变的。String字符串拼接会创建一个新的字符串。 StringBuilder类：表示字符串,但是是可变的 StringBuilder可以解决String字符串拼接的问题">
+<meta name="keywords" content="java中的常用类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中的StringBuilder类">
+<meta property="og:url" content="http://yoursite.com/2019/08/07/Java中的StringBuilder类/index.html">
 <meta property="og:site_name" content="欢迎来到李滨洪的个人博客">
+<meta property="og:description" content="String类：表示字符串,但是是不可变的。String字符串拼接会创建一个新的字符串。 StringBuilder类：表示字符串,但是是可变的 StringBuilder可以解决String字符串拼接的问题">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-07T08:01:30.604Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="欢迎来到李滨洪的个人博客">
+<meta name="twitter:title" content="Java中的StringBuilder类">
+<meta name="twitter:description" content="String类：表示字符串,但是是不可变的。String字符串拼接会创建一个新的字符串。 StringBuilder类：表示字符串,但是是可变的 StringBuilder可以解决String字符串拼接的问题">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到李滨洪的个人博客" type="application/atom+xml">
   
@@ -144,60 +149,177 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java中的StringBuilder类" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/31/Java面向对象三大特性之—多态/" class="archive-article-date">
-  	<time datetime="2019-07-31T15:37:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/31/Java面向对象三大特性之—多态/">Java面向对象三大特性之—多态</a>
+    <h1 class="article-title" itemprop="name">
+      Java中的StringBuilder类
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/08/07/Java中的StringBuilder类/" class="archive-article-date">
+  	<time datetime="2019-08-07T07:53:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
+</a>
+       
+       
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>String类：</code>表示字符串,但是是不可变的。String字符串拼接会创建一个新的字符串。</p>
+<p><code>StringBuilder类：</code>表示字符串,但是是可变的</p>
+<p>StringBuilder可以解决String字符串拼接的问题</p>
+<a id="more"></a>
+
+<p>StringBuilder是个字符串的缓冲区，即它是一个容器，容器中可以装很多字符串。并且能够对其中的字符串进行各种操作。</p>
+<p>它的内部拥有一个数组用来存放字符串内容，进行字符串拼接时，直接在数组中加入新内容。StringBuilder会自动维护数组的扩容。</p>
+<p><strong>StringBuffer</strong>字符串缓冲区的初始容量是16个字符</p>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><p>根据StringBuilder的API文档，常用构造方法有2个：</p>
+<ul>
+<li><code>public StringBuilder()</code>：构造一个空的StringBuilder容器。</li>
+<li><code>public StringBuilder(String str)</code>：构造一个StringBuilder容器，并将字符串添加进去。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    StringBuilder sb1 = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    System.out.println(sb1); <span class="comment">// (空白)</span></span><br><span class="line">    <span class="comment">// 使用带参构造</span></span><br><span class="line">    StringBuilder sb2 = <span class="keyword">new</span> StringBuilder(<span class="string">"itcast"</span>);</span><br><span class="line">    System.out.println(sb2); <span class="comment">// itcast</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用成员方法"><a href="#常用成员方法" class="headerlink" title="常用成员方法"></a>常用成员方法</h3><p><code>StringBuilder append(String str)</code> 将指定的字符串附加到此字符序列。</p>
+<p><code>public String toString()</code> 将当前StringBuilder对象转换为不可变的String对象。</p>
+<p><code>StringBuilder reverse()</code>  导致该字符序列被序列的相反代替。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">java面型对象</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java中的常用类</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/07/Java中的StringBuilder类/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/08/07/Java中的包装类/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java中的包装类
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/08/07/Java中的System类/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中的System类</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -224,9 +346,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -294,6 +416,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">java中的集合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java中的常用类</a>
               </li>
              
@@ -306,7 +432,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">java面型对象</a>
+                <a href="javascript:void(0)" class="js-tag color2">Iterator迭代器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">java中的泛型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">idea</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">模仿扑克发牌</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
