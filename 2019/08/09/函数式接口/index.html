@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java中的Date类 | 欢迎来到李滨洪的个人博客</title>
+  <title>函数式接口 | 欢迎来到李滨洪的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="java.util.Date类 表示特定的瞬间，精确到毫秒。">
-<meta name="keywords" content="java中的常用类">
+  <meta name="description" content="函数式接口在Java中是指：有且仅有一个抽象方法的接口。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中的Date类">
-<meta property="og:url" content="http://yoursite.com/2019/08/07/Java中的Date类/index.html">
+<meta property="og:title" content="函数式接口">
+<meta property="og:url" content="http://yoursite.com/2019/08/09/函数式接口/index.html">
 <meta property="og:site_name" content="欢迎来到李滨洪的个人博客">
-<meta property="og:description" content="java.util.Date类 表示特定的瞬间，精确到毫秒。">
+<meta property="og:description" content="函数式接口在Java中是指：有且仅有一个抽象方法的接口。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-07T07:30:08.672Z">
+<meta property="og:updated_time" content="2019-08-09T09:40:32.722Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中的Date类">
-<meta name="twitter:description" content="java.util.Date类 表示特定的瞬间，精确到毫秒。">
+<meta name="twitter:title" content="函数式接口">
+<meta name="twitter:description" content="函数式接口在Java中是指：有且仅有一个抽象方法的接口。">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到李滨洪的个人博客" type="application/atom+xml">
   
@@ -155,20 +154,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java中的Date类" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-函数式接口" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java中的Date类
+      函数式接口
     </h1>
   
 
         
-        <a href="/2019/08/07/Java中的Date类/" class="archive-article-date">
-  	<time datetime="2019-08-07T07:14:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
+        <a href="/2019/08/09/函数式接口/" class="archive-article-date">
+  	<time datetime="2019-08-09T09:38:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-09</time>
 </a>
        
        
@@ -181,21 +180,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><code>java.util.Date</code>类 表示特定的瞬间，精确到毫秒。</p>
+        <p>函数式接口在Java中是指：<strong>有且仅有一个抽象方法的接口</strong>。</p>
 <a id="more"></a>
 
-<ul>
-<li><code>public Date()</code>：分配Date对象并初始化此对象，以表示分配它的时间（精确到毫秒）。</li>
-<li><code>public Date(long date)</code>：分配Date对象并初始化此对象，以表示自从标准基准时间（称为“历元（epoch）”，即1970年1月1日00:00:00 GMT）以来的指定毫秒数。</li>
-</ul>
-<blockquote>
-<p>tips: 由于我们处于东八区，所以我们的基准时间为1970年1月1日8时0分0秒。</p>
-</blockquote>
-<p>简单来说：使用无参构造，可以自动设置当前系统时间的毫秒时刻；指定long类型的构造参数，可以自定义毫秒时刻。</p>
-<p>例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Date date2 = <span class="keyword">new</span> Date();</span><br><span class="line">    System.out.println(date2);<span class="comment">//Wed Aug 07 15:27:57 CST 2019</span></span><br><span class="line">    <span class="comment">//date日期对象里面的getTime获取的对应日期对象的对应毫秒值</span></span><br><span class="line">    System.out.println(date2.getTime());<span class="comment">//1565162877744</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><p><code>public long getTime()</code> 把日期对象转换成对应的时间毫秒值。</p>
 
       
 
@@ -205,17 +192,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java中的常用类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -266,7 +242,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/07/Java中的Date类/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/09/函数式接口/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,18 +256,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/07/Java中的DateFormat类/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java中的DateFormat类
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/07/Java中的Object类/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java中的Object类</div>
+    <a href="/2019/08/08/序列化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">序列化</div>
       <i class="icon-circle-right"></i>
     </a>
   
