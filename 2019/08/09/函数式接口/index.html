@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="欢迎来到李滨洪的个人博客">
 <meta property="og:description" content="函数式接口在Java中是指：有且仅有一个抽象方法的接口。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-09T09:40:32.722Z">
+<meta property="og:updated_time" content="2019-08-23T07:14:33.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数式接口">
 <meta name="twitter:description" content="函数式接口在Java中是指：有且仅有一个抽象方法的接口。">
@@ -183,78 +183,158 @@
         <p>函数式接口在Java中是指：<strong>有且仅有一个抽象方法的接口</strong>。</p>
 <a id="more"></a>
 
+<p>函数式接口，即适用于函数式编程场景的接口。而Java中的函数式编程体现就是Lambda，所以函数式接口就是可以适用于Lambda使用的接口。只有确保接口中有且仅有一个抽象方法，Java中的Lambda才能顺利地进行推导。</p>
+<h2 id="1-格式"><a href="#1-格式" class="headerlink" title="1 格式"></a>1 格式</h2><p>只要确保接口中有且仅有一个抽象方法即可：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修饰符 <span class="class"><span class="keyword">interface</span> 接口名称 </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> 返回值类型 方法名称(可选参数信息);</span><br><span class="line">    <span class="comment">// 其他非抽象方法内容</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于接口当中抽象方法的<code>public abstract</code>是可以省略的，所以定义一个函数式接口很简单：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyFunctionalInterface</span> </span>&#123;	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-FunctionalInterface注解"><a href="#2-FunctionalInterface注解" class="headerlink" title="2 @FunctionalInterface注解"></a>2 @FunctionalInterface注解</h2><p>与<code>@Override</code>注解的作用类似，Java 8中专门为函数式接口引入了一个新的注解：<code>@FunctionalInterface</code>。该注解可用于一个接口的定义上：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyFunctionalInterface</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-函数式编程"><a href="#3-函数式编程" class="headerlink" title="3 函数式编程"></a>3 函数式编程</h2><h3 id="3-1-Lambda的延迟执行"><a href="#3-1-Lambda的延迟执行" class="headerlink" title="3.1 Lambda的延迟执行"></a>3.1 Lambda的延迟执行</h3><p>有些场景的代码执行后，结果不一定会被使用，从而造成性能浪费。而Lambda表达式是延迟执行的，这正好可以作为解决方案，提升性能。</p>
+<p><strong>证明Lambda的延迟</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo03LoggerDelay</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">(<span class="keyword">int</span> level, MessageBuilder builder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (level == <span class="number">1</span>) &#123;</span><br><span class="line">          	System.out.println(builder.buildMessage());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String msgA = <span class="string">"Hello"</span>;</span><br><span class="line">        String msgB = <span class="string">"World"</span>;</span><br><span class="line">        String msgC = <span class="string">"Java"</span>;</span><br><span class="line"></span><br><span class="line">        log(<span class="number">2</span>, () -&gt; &#123;</span><br><span class="line">            System.out.println(<span class="string">"Lambda执行！"</span>);</span><br><span class="line">            <span class="keyword">return</span> msgA + msgB + msgC;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>从结果中可以看出，在不符合级别要求的情况下，Lambda将不会执行。从而达到节省性能的效果。</p>
+<p><font color="ref">扩展：实际上使用内部类也可以达到同样的效果，只是将代码操作延迟到了另外一个对象当中通<font color="ref">过调用方法来完成。而是否调用其所在方法是在条件判断之后才执行的。</font></font></p>
+<h3 id="3-2-使用Lambda作为参数和返回值"><a href="#3-2-使用Lambda作为参数和返回值" class="headerlink" title="3.2 使用Lambda作为参数和返回值"></a>3.2 使用Lambda作为参数和返回值</h3><p>例如<code>java.lang.Runnable</code>接口就是一个函数式接口，假设有一个<code>startThread</code>方法使用该接口作为参数，那么就可以使用Lambda进行传参。这种情况其实和<code>Thread</code>类的构造方法参数为<code>Runnable</code>没有本质区别。</p>
+<p>类似地，如果一个方法的返回值类型是一个函数式接口，那么就可以直接返回一个Lambda表达式。当需要通过一个方法来获取一个<code>java.util.Comparator</code>接口类型的对象作为排序器时：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo06Comparator</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Comparator&lt;String&gt; <span class="title">newComparator</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      	<span class="keyword">return</span> (a, b) -&gt; b.length() - a.length();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String[] array = &#123; <span class="string">"abc"</span>, <span class="string">"ab"</span>, <span class="string">"abcd"</span> &#125;;</span><br><span class="line">        System.out.println(Arrays.toString(array));</span><br><span class="line">        Arrays.sort(array, newComparator());</span><br><span class="line">        System.out.println(Arrays.toString(array));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-方法引用"><a href="#3-3-方法引用" class="headerlink" title="3.3 方法引用"></a>3.3 方法引用</h3><p><strong>冗余的Lambda场景</strong></p>
+<p>来看一个简单的函数式接口以应用Lambda表达式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Printable</span> </span>&#123;</span><br><span class="line">  	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(String str)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在<code>Printable</code>接口当中唯一的抽象方法<code>print</code>接收一个字符串参数，目的就是为了打印显示它。那么通过Lambda来使用它的代码很简单</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01PrintSimple</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printString</span><span class="params">(Printable data)</span> </span>&#123;</span><br><span class="line">      	data.print(<span class="string">"Hello, World!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      	printString(s -&gt; System.out.println(s));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>用方法引用改进代码</strong></p>
+<p>能否省去Lambda的语法格式（尽管它已经相当简洁）呢？只要“引用    ”过去就好了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo02PrintRef</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printString</span><span class="params">(Printable data)</span> </span>&#123;</span><br><span class="line">        data.print(<span class="string">"Hello, World!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      	printString(System.out::println);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>请注意其中的双冒号<code>::</code>写法，这被称为“<strong>方法引用</strong>”，而双冒号是一种新的语法。</p>
+<h3 id="3-4-方法引用符"><a href="#3-4-方法引用符" class="headerlink" title="3.4 方法引用符"></a>3.4 方法引用符</h3><p>双冒号<code>::</code>为引用运算符，而它所在的表达式被称为<strong>方法引用</strong>。如果Lambda要表达的函数方案已经存在于某个方法的实现中，那么则可以通过双冒号来引用该方法作为Lambda的替代者。</p>
+<h4 id="语义分析"><a href="#语义分析" class="headerlink" title="语义分析"></a>语义分析</h4><p>例如上例中，<code>System.out</code>对象中有一个重载的<code>println(String)</code>方法恰好就是我们所需要的。那么对于<code>printString</code>方法的函数式接口参数，对比下面两种写法，完全等效：</p>
+<ul>
+<li>Lambda表达式写法：<code>s -&gt; System.out.println(s);</code></li>
+<li>方法引用写法：<code>System.out::println</code></li>
+</ul>
+<p>第一种语义是指：拿到参数之后经Lambda之手，继而传递给<code>System.out.println</code>方法去处理。</p>
+<p>第二种等效写法的语义是指：直接让<code>System.out</code>中的<code>println</code>方法来取代Lambda。两种写法的执行效果完全一样，而第二种方法引用的写法复用了已有方案，更加简洁。</p>
+<h3 id="3-5-通过对象名引用成员方法"><a href="#3-5-通过对象名引用成员方法" class="headerlink" title="3.5 通过对象名引用成员方法"></a>3.5 通过对象名引用成员方法</h3><p>这是最常见的一种用法，与上例相同。如果一个类中已经存在了一个成员方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodRefObject</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printUpperCase</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">      	System.out.println(str.toUpperCase());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>函数式接口仍然定义为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Printable</span> </span>&#123;</span><br><span class="line">  	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(String str)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那么当需要使用这个<code>printUpperCase</code>成员方法来替代<code>Printable</code>接口的Lambda的时候，已经具有了<code>MethodRefObject</code>类的对象实例，则可以通过对象名引用成员方法，代码为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo04MethodRef</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printString</span><span class="params">(Printable lambda)</span> </span>&#123;</span><br><span class="line">      	lambda.print(<span class="string">"Hello"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MethodRefObject obj = <span class="keyword">new</span> MethodRefObject();</span><br><span class="line">        printString(obj::printUpperCase);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-6-通过类名称引用静态方法"><a href="#3-6-通过类名称引用静态方法" class="headerlink" title="3.6 通过类名称引用静态方法"></a>3.6 通过类名称引用静态方法</h3><p>由于在<code>java.lang.Math</code>类中已经存在了静态方法<code>abs</code>，所以当我们需要通过Lambda来调用该方法时，有两种写法。首先是函数式接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Calcable</span> </span>&#123;</span><br><span class="line">  	<span class="function"><span class="keyword">int</span> <span class="title">calc</span><span class="params">(<span class="keyword">int</span> num)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第一种写法是使用Lambda表达式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo05Lambda</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(<span class="keyword">int</span> num, Calcable lambda)</span> </span>&#123;</span><br><span class="line">      	System.out.println(lambda.calc(num));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      	method(-<span class="number">10</span>, n -&gt; Math.abs(n));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是使用方法引用的更好写法是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo06MethodRef</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(<span class="keyword">int</span> num, Calcable lambda)</span> </span>&#123;</span><br><span class="line">      	System.out.println(lambda.calc(num));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      	method(-<span class="number">10</span>, Math::abs);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，下面两种写法是等效的：</p>
+<ul>
+<li>Lambda表达式：<code>n -&gt; Math.abs(n)</code></li>
+<li>方法引用：<code>Math::abs</code></li>
+</ul>
+<h3 id="3-7-通过super引用父类成员方法"><a href="#3-7-通过super引用父类成员方法" class="headerlink" title="3.7 通过super引用父类成员方法"></a>3.7 通过super引用父类成员方法</h3><p>如果存在继承关系，当Lambda中需要出现super调用时，也可以使用方法引用进行替代。首先是函数式接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Greetable</span> </span>&#123;</span><br><span class="line">  	<span class="function"><span class="keyword">void</span> <span class="title">greet</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后是父类<code>Human</code>的内容：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      	System.out.println(<span class="string">"Hello!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后是子类<code>Man</code>的内容，其中使用了Lambda的写法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Man</span> <span class="keyword">extends</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      	method(() -&gt; <span class="keyword">super</span>.sayHello());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Greetable lambda)</span> </span>&#123;</span><br><span class="line">        lambda.greet();</span><br><span class="line">        System.out.println(<span class="string">"I'm a man!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是如果使用方法引用来调用父类中的<code>sayHello</code>方法会更好，例如另一个子类<code>Woman</code>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Woman</span> <span class="keyword">extends</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      	method(<span class="keyword">super</span>::sayHello);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Greetable lambda)</span> </span>&#123;</span><br><span class="line">        lambda.greet();</span><br><span class="line">        System.out.println(<span class="string">"I'm a woman!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，下面两种写法是等效的：</p>
+<ul>
+<li>Lambda表达式：<code>() -&gt; super.sayHello()</code></li>
+<li>方法引用：<code>super::sayHello</code></li>
+</ul>
+<h3 id="3-8-通过this引用成员方法"><a href="#3-8-通过this引用成员方法" class="headerlink" title="3.8 通过this引用成员方法"></a>3.8 通过this引用成员方法</h3><p>this代表当前对象，如果需要引用的方法就是当前类中的成员方法，那么可以使用“<strong>this::成员方法</strong>”的格式来使用方法引用。首先是简单的函数式接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Richable</span> </span>&#123;</span><br><span class="line">   	<span class="function"><span class="keyword">void</span> <span class="title">buy</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是一个丈夫<code>Husband</code>类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Husband</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">marry</span><span class="params">(Richable lambda)</span> </span>&#123;</span><br><span class="line">      	lambda.buy();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beHappy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      	marry(() -&gt; System.out.println(<span class="string">"买套房子"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>开心方法<code>beHappy</code>调用了结婚方法<code>marry</code>，后者的参数为函数式接口<code>Richable</code>，所以需要一个Lambda表达式。但是如果这个Lambda表达式的内容已经在本类当中存在了，则可以对<code>Husband</code>丈夫类进行修改：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Husband</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">buyHouse</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      	System.out.println(<span class="string">"买套房子"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">marry</span><span class="params">(Richable lambda)</span> </span>&#123;</span><br><span class="line">      	lambda.buy();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beHappy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      	marry(() -&gt; <span class="keyword">this</span>.buyHouse());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果希望取消掉Lambda表达式，用方法引用进行替换，则更好的写法为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Husband</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">buyHouse</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      	System.out.println(<span class="string">"买套房子"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">marry</span><span class="params">(Richable lambda)</span> </span>&#123;</span><br><span class="line">      	lambda.buy();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beHappy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      	marry(<span class="keyword">this</span>::buyHouse);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，下面两种写法是等效的：</p>
+<ul>
+<li>Lambda表达式：<code>() -&gt; this.buyHouse()</code></li>
+<li>方法引用：<code>this::buyHouse</code></li>
+</ul>
+<h3 id="3-9-类的构造器引用"><a href="#3-9-类的构造器引用" class="headerlink" title="3.9 类的构造器引用"></a>3.9 类的构造器引用</h3><p>由于构造器的名称与类名完全一样，并且固定。所以构造器引用使用<code>类名称::new</code>的格式表示。首先是一个简单的<code>Person</code>类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">      	<span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      	<span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后是用来创建<code>Person</code>对象的函数式接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PersonBuilder</span> </span>&#123;</span><br><span class="line">    <span class="function">Person <span class="title">buildPerson</span><span class="params">(String name)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要使用这个函数式接口，可以通过Lambda表达式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo09Lambda</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printName</span><span class="params">(String name, PersonBuilder builder)</span> </span>&#123;</span><br><span class="line">      	System.out.println(builder.buildPerson(name).getName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      	printName(<span class="string">"赵丽颖"</span>, name -&gt; <span class="keyword">new</span> Person(name));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是通过构造器引用，有更好的写法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo10ConstructorRef</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printName</span><span class="params">(String name, PersonBuilder builder)</span> </span>&#123;</span><br><span class="line">      	System.out.println(builder.buildPerson(name).getName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      	printName(<span class="string">"赵丽颖"</span>, Person::<span class="keyword">new</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，下面两种写法是等效的：</p>
+<ul>
+<li>Lambda表达式：<code>name -&gt; new Person(name)</code></li>
+<li>方法引用：<code>Person::new</code></li>
+</ul>
+<h3 id="3-10-数组的构造器引用"><a href="#3-10-数组的构造器引用" class="headerlink" title="3.10 数组的构造器引用"></a>3.10 数组的构造器引用</h3><p>数组也是<code>Object</code>的子类对象，所以同样具有构造器，只是语法稍有不同。如果对应到Lambda的使用场景中时，需要一个函数式接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ArrayBuilder</span> </span>&#123;</span><br><span class="line">  	<span class="keyword">int</span>[] buildArray(<span class="keyword">int</span> length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在应用该接口的时候，可以通过Lambda表达式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo11ArrayInitRef</span> </span>&#123;   </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span>[] initArray(<span class="keyword">int</span> length, ArrayBuilder builder) &#123;</span><br><span class="line">      	<span class="keyword">return</span> builder.buildArray(length);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      	<span class="keyword">int</span>[] array = initArray(<span class="number">10</span>, length -&gt; <span class="keyword">new</span> <span class="keyword">int</span>[length]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是更好的写法是使用数组的构造器引用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo12ArrayInitRef</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span>[] initArray(<span class="keyword">int</span> length, ArrayBuilder builder) &#123;</span><br><span class="line">      	<span class="keyword">return</span> builder.buildArray(length);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      	<span class="keyword">int</span>[] array = initArray(<span class="number">10</span>, <span class="keyword">int</span>[]::<span class="keyword">new</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，下面两种写法是等效的：</p>
+<ul>
+<li>Lambda表达式：<code>length -&gt; new int[length]</code></li>
+<li>方法引用：<code>int[]::new</code></li>
+</ul>
+<blockquote>
+<p>备注：数组的构造器引用，可以和Java 8的Stream API结合，在一定程度上“解决”集合中<code>toArray</code>方法的泛型擦除问题。</p>
+</blockquote>
 
       
 
       
     </div>
 
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/09/函数式接口/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+   
   </div>
 </article>
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/08/23/Stream流/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Stream流
+        
+      </div>
+    </a>
   
   
     <a href="/2019/08/08/序列化/" id="article-nav-older" class="article-nav-link-wrap">
@@ -392,6 +472,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">IO流</a>
               </li>
              
@@ -433,6 +517,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">stream流</a>
               </li>
             
             <div class="clearfix"></div>
