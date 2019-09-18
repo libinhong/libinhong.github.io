@@ -152,20 +152,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-多表查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-MyBatis遇到的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/11/多表查询/">多表查询</a>
+      <a class="article-title" href="/2019/09/18/MyBatis遇到的问题/">MyBatis遇到的问题</a>
     </h1>
   
 
         
-        <a href="/2019/09/11/多表查询/" class="archive-article-date">
-  	<time datetime="2019-09-11T10:49:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-11</time>
+        <a href="/2019/09/18/MyBatis遇到的问题/" class="archive-article-date">
+  	<time datetime="2019-09-18T10:33:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
 </a>
        
        
@@ -174,9 +174,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>什么是多表查询?</p>
+        <p><font color="red">**Caused by: org.xml.sax.SAXParseException; lineNumber: 2; columnNumber: 6; 不允许有匹配 “[xX][mM][lL]” 的处理指令目标。</font></p>
         
-          <a class="article-more-a" href="/2019/09/11/多表查询/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/18/MyBatis遇到的问题/#more">more >></a>
         
       
 
@@ -207,20 +207,20 @@
 
 
   
-    <article id="post-数据库约束" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-使用实体类的包装对象作为查询条件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/11/数据库约束/">数据库约束</a>
+      <a class="article-title" href="/2019/09/18/使用实体类的包装对象作为查询条件/">使用实体类的包装对象作为查询条件</a>
     </h1>
   
 
         
-        <a href="/2019/09/11/数据库约束/" class="archive-article-date">
-  	<time datetime="2019-09-11T10:24:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-11</time>
+        <a href="/2019/09/18/使用实体类的包装对象作为查询条件/" class="archive-article-date">
+  	<time datetime="2019-09-18T10:31:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
 </a>
        
        
@@ -229,9 +229,68 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>对表中的数据进行进一步的限制，保证数据的<strong>正确性</strong>、<strong>有效性</strong>和<strong>完整性</strong>。</p>
+        <p>使用实体类的</p>
+<p>什么时候使用？</p>
+<p><strong>多个对象组成一个查询条件，来实现数据的查询</strong></p>
+<p>实现步骤</p>
+<p>创建一个QueryVo包装对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QueryVo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 包装user</span></span><br><span class="line">    <span class="keyword">private</span> User user;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">getUser</span><span class="params">(User user)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.user;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUser</span><span class="params">(User user)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.user = user;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+
+   
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
         
-          <a class="article-more-a" href="/2019/09/11/数据库约束/#more">more >></a>
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MyBatis中的延迟加载和缓存" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/18/MyBatis中的延迟加载和缓存/">MyBatis中的延迟加载和缓存</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/18/MyBatis中的延迟加载和缓存/" class="archive-article-date">
+  	<time datetime="2019-09-18T10:28:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
+</a>
+       
+       
+      </header>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-MyBatis中的延迟加载"><a href="#1-MyBatis中的延迟加载" class="headerlink" title="1 MyBatis中的延迟加载"></a>1 MyBatis中的延迟加载</h3>
+        
+          <a class="article-more-a" href="/2019/09/18/MyBatis中的延迟加载和缓存/#more">more >></a>
         
       
 
@@ -262,20 +321,20 @@
 
 
   
-    <article id="post-表关系" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-MyBatis中的注解开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/11/表关系/">表关系</a>
+      <a class="article-title" href="/2019/09/18/MyBatis中的注解开发/">MyBatis中的注解开发</a>
     </h1>
   
 
         
-        <a href="/2019/09/11/表关系/" class="archive-article-date">
-  	<time datetime="2019-09-11T10:20:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-11</time>
+        <a href="/2019/09/18/MyBatis中的注解开发/" class="archive-article-date">
+  	<time datetime="2019-09-18T10:26:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
 </a>
        
        
@@ -284,9 +343,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>表与表之间的这种关系！分成三种：一对一、一对多、多对多</p>
+        <h3 id="1-常用注解说明"><a href="#1-常用注解说明" class="headerlink" title="1 常用注解说明"></a>1 常用注解说明</h3>
         
-          <a class="article-more-a" href="/2019/09/11/表关系/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/18/MyBatis中的注解开发/#more">more >></a>
         
       
 
@@ -317,20 +376,20 @@
 
 
   
-    <article id="post-三范式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-MyBatis代理dao实现CURD" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/11/三范式/">三范式</a>
+      <a class="article-title" href="/2019/09/18/MyBatis代理dao实现CURD/">MyBatis代理dao实现CURD</a>
     </h1>
   
 
         
-        <a href="/2019/09/11/三范式/" class="archive-article-date">
-  	<time datetime="2019-09-11T10:12:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-11</time>
+        <a href="/2019/09/18/MyBatis代理dao实现CURD/" class="archive-article-date">
+  	<time datetime="2019-09-18T09:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
 </a>
        
        
@@ -339,9 +398,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-什么是范式"><a href="#1-什么是范式" class="headerlink" title="1 什么是范式?"></a>1 什么是范式?</h2><p><strong>范式是指</strong>:设计数据库表的规则(Normal Form)</p>
+        <h2 id="mybatis实现代理dao开发"><a href="#mybatis实现代理dao开发" class="headerlink" title="mybatis实现代理dao开发"></a>mybatis实现代理dao开发</h2>
         
-          <a class="article-more-a" href="/2019/09/11/三范式/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/18/MyBatis代理dao实现CURD/#more">more >></a>
         
       
 
@@ -372,20 +431,20 @@
 
 
   
-    <article id="post-DQL语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-MyBatis高级映射" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/11/DQL语句/">DQL语句</a>
+      <a class="article-title" href="/2019/09/18/MyBatis高级映射/">MyBatis高级映射</a>
     </h1>
   
 
         
-        <a href="/2019/09/11/DQL语句/" class="archive-article-date">
-  	<time datetime="2019-09-11T09:32:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-11</time>
+        <a href="/2019/09/18/MyBatis高级映射/" class="archive-article-date">
+  	<time datetime="2019-09-18T09:47:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
 </a>
        
        
@@ -394,9 +453,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>查询不会对数据库中的数据进行修改.只是一种显示数据的方式</p>
+        <h2 id="MyBatis高级映射"><a href="#MyBatis高级映射" class="headerlink" title="MyBatis高级映射"></a>MyBatis高级映射</h2>
         
-          <a class="article-more-a" href="/2019/09/11/DQL语句/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/18/MyBatis高级映射/#more">more >></a>
         
       
 
@@ -427,20 +486,20 @@
 
 
   
-    <article id="post-DML语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-MyBatis动态sql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/11/DML语句/">DML语句</a>
+      <a class="article-title" href="/2019/09/18/MyBatis动态sql/">MyBatis动态sql</a>
     </h1>
   
 
         
-        <a href="/2019/09/11/DML语句/" class="archive-article-date">
-  	<time datetime="2019-09-11T09:24:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-11</time>
+        <a href="/2019/09/18/MyBatis动态sql/" class="archive-article-date">
+  	<time datetime="2019-09-18T09:45:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
 </a>
        
        
@@ -449,9 +508,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-插入记录"><a href="#1-插入记录" class="headerlink" title="1 插入记录"></a>1 插入记录</h3>
+        <h2 id="MyBatis动态Sql"><a href="#MyBatis动态Sql" class="headerlink" title="MyBatis动态Sql"></a>MyBatis动态Sql</h2>
         
-          <a class="article-more-a" href="/2019/09/11/DML语句/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/18/MyBatis动态sql/#more">more >></a>
         
       
 
@@ -482,20 +541,20 @@
 
 
   
-    <article id="post-DDL语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-MyBatis入门与环境搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/23/DDL语句/">DDL语句</a>
+      <a class="article-title" href="/2019/09/18/MyBatis入门与环境搭建/">MyBatis入门与环境搭建</a>
     </h1>
   
 
         
-        <a href="/2019/08/23/DDL语句/" class="archive-article-date">
-  	<time datetime="2019-08-23T07:52:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-23</time>
+        <a href="/2019/09/18/MyBatis入门与环境搭建/" class="archive-article-date">
+  	<time datetime="2019-09-18T09:42:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
 </a>
        
        
@@ -504,9 +563,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-DDL操作数据库"><a href="#1-DDL操作数据库" class="headerlink" title="1 DDL操作数据库"></a>1 DDL操作数据库</h2>
+        <h3 id="1-MyBatis入门与环境搭建"><a href="#1-MyBatis入门与环境搭建" class="headerlink" title="1 MyBatis入门与环境搭建"></a>1 MyBatis入门与环境搭建</h3>
         
-          <a class="article-more-a" href="/2019/08/23/DDL语句/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/18/MyBatis入门与环境搭建/#more">more >></a>
         
       
 
@@ -537,20 +596,20 @@
 
 
   
-    <article id="post-SQL语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-springMVC文件上传" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/23/SQL语句/">SQL语句</a>
+      <a class="article-title" href="/2019/09/18/springMVC文件上传/">springMVC文件上传</a>
     </h1>
   
 
         
-        <a href="/2019/08/23/SQL语句/" class="archive-article-date">
-  	<time datetime="2019-08-23T07:45:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-23</time>
+        <a href="/2019/09/18/springMVC文件上传/" class="archive-article-date">
+  	<time datetime="2019-09-18T09:38:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
 </a>
        
        
@@ -559,9 +618,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-SQL的概念"><a href="#1-SQL的概念" class="headerlink" title="1 SQL的概念"></a>1 SQL的概念</h2><p>结构化查询语言(Structured Query Language)简称SQL,SQL语句就是对数据库进行操作的一种语言。</p>
+        <h3 id="springmvc文件上传"><a href="#springmvc文件上传" class="headerlink" title="springmvc文件上传"></a>springmvc文件上传</h3>
         
-          <a class="article-more-a" href="/2019/08/23/SQL语句/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/18/springMVC文件上传/#more">more >></a>
         
       
 
@@ -592,20 +651,20 @@
 
 
   
-    <article id="post-数据库介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-spring返回值类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/23/数据库介绍/">数据库介绍</a>
+      <a class="article-title" href="/2019/09/18/spring返回值类型/">spring返回值类型</a>
     </h1>
   
 
         
-        <a href="/2019/08/23/数据库介绍/" class="archive-article-date">
-  	<time datetime="2019-08-23T07:22:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-23</time>
+        <a href="/2019/09/18/spring返回值类型/" class="archive-article-date">
+  	<time datetime="2019-09-18T09:36:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
 </a>
        
        
@@ -614,64 +673,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-数据库概述"><a href="#1-数据库概述" class="headerlink" title="1 数据库概述"></a>1 数据库概述</h2><p>存储数据的仓库. 其本质是一个文件系统，数据库按照特定的格式将数据存储起来，用户可以对数据库中的数据进行增加，修改，删除及查询操作。</p>
+        <h3 id="1-springmvc返回值类型"><a href="#1-springmvc返回值类型" class="headerlink" title="1 springmvc返回值类型"></a>1 springmvc返回值类型</h3>
         
-          <a class="article-more-a" href="/2019/08/23/数据库介绍/#more">more >></a>
-        
-      
-
-      
-    </div>
-
-   
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Stream流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/23/Stream流/">Stream流</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/23/Stream流/" class="archive-article-date">
-  	<time datetime="2019-08-23T07:01:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-23</time>
-</a>
-       
-       
-      </header>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>说到Stream便容易想到I/O Stream，而实际上，谁规定“流”就一定是“IO流”呢？在Java 8中，得益于Lambda所带来的函数式编程，引入了一个<strong>全新的Stream概念</strong>，用于解决已有集合类库既有的弊端。</p>
-        
-          <a class="article-more-a" href="/2019/08/23/Stream流/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/18/spring返回值类型/#more">more >></a>
         
       
 
@@ -704,7 +708,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -835,6 +839,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">springMVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">hexo使用教程</a>
               </li>
              
@@ -844,6 +860,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
